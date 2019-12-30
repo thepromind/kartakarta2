@@ -159,7 +159,11 @@ const FixedHeader = (props: any) => {
           </Grid>
           <Grid item xl={3} lg={3} md={6} sm={6} xs={6}>
             <Link smooth={true} to="order">
-              <Button variant="contained" className={classes.buttonOrderCard}>
+              <Button
+                variant="contained"
+                className={classes.buttonOrderCard}
+                onClick={() => props.scrollToOrder()}
+              >
                 Заказать карту
               </Button>
             </Link>
