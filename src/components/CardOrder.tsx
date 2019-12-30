@@ -11,10 +11,10 @@ import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
-import MaskedInput from "react-text-mask";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ReactGA from "react-ga";
 import api from "../api/Api";
+import MaskedInput from "react-maskedinput";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "19px"
       },
       paper: {
-        padding: "12px 8px 12px 8px",
+        padding: "22px 16px 22px 16px",
         backgroundColor: "white",
         border: "1px solid #E8E8E8",
         boxSizing: "border-box",
@@ -37,9 +37,12 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       box: {
         textAlign: "center",
-        fontWeight: "fontWeightBold",
+        fontWeight: "bold",
         fontSize: "20px",
-        lineHeight: "40px"
+        lineHeight: "20px"
+      },
+      formControlCheckBox: {
+        marginTop: "20px"
       },
       checkBoxLabel: {
         fontStyle: "normal",
@@ -60,10 +63,17 @@ const useStyles = makeStyles((theme: Theme) =>
         fontStyle: "normal",
         boxShadow: "none",
         textTransform: "none",
-        height: 31,
+        height: 40,
         "&:hover, &:active": {
           backgroundColor: "#3F0259",
           borderColor: "#3F0259",
+          opacity: 0.8,
+          boxShadow: "none",
+          color: "#FFFFFF"
+        },
+        "&:disabled": {
+          backgroundColor: "#FFCF87",
+          opacity: 0.4,
           boxShadow: "none",
           color: "#FFFFFF"
         }
@@ -71,12 +81,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("sm", "xl")]: {
       root: {
-        marginTop: "34px",
-        padding: "72px 52px 72px 52px",
-        alignItems: "center"
+        padding: "64px 252px 64px 252px",
+        maxWidth: 1280,
+        margin: "auto"
       },
       paper: {
-        padding: "48px 32px 48px 32px",
+        padding: "45px 72px 45px 72px",
         background: "#FFFFFF",
         border: "2px solid #FAFAFA",
         boxSizing: "border-box",
@@ -88,9 +98,13 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       box: {
         textAlign: "center",
-        fontWeight: "fontWeightBold",
+        fontWeight: "bold",
         fontSize: "40px",
-        lineHeight: "40px"
+        lineHeight: "40px",
+        marginBottom: "27px"
+      },
+      formControlCheckBox: {
+        marginTop: "25px"
       },
       checkBoxLabel: {
         fontStyle: "normal",
@@ -135,7 +149,7 @@ interface TextMaskCustomProps {
   inputRef: (ref: HTMLInputElement | null) => void;
 }
 
-function TextMaskCustom(props: TextMaskCustomProps) {
+const TextMaskCustom = (props: TextMaskCustomProps) => {
   const { inputRef, ...other } = props;
 
   return (
@@ -144,35 +158,16 @@ function TextMaskCustom(props: TextMaskCustomProps) {
       ref={(ref: any) => {
         inputRef(ref ? ref.inputElement : null);
       }}
-      mask={[
-        "+",
-        /[1-9]/,
-        " ",
-        "(",
-        /\d/,
-        /\d/,
-        /\d/,
-        ")",
-        " ",
-        /\d/,
-        /\d/,
-        /\d/,
-        " ",
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/
-      ]}
-      placeholderChar={"\u2000"}
-      showMask
+      mask="1(111) 111 11 11"
+      placeholder={"7(707) 707 77 77"}
     />
   );
-}
+};
 
 const CardOrder = (props: any) => {
   const [fio, setFio] = React.useState("");
-  const [phoneNumber, setPhoneNumber] = React.useState("7");
-  const [agree, setAgree] = React.useState<boolean>(false);
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [agree, setAgree] = React.useState<boolean>(true);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -195,7 +190,8 @@ const CardOrder = (props: any) => {
   const theme = useTheme();
   const isXS = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const isValid = () => fio.length > 1 && phoneNumber.length === 17 && agree;
+  const isValid = () =>
+    fio.length > 1 && phoneNumber.replace("_", "").length === 16 && agree;
 
   return (
     <Grid
@@ -207,14 +203,14 @@ const CardOrder = (props: any) => {
       justify="center"
     >
       <Paper elevation={0} className={classes.paper}>
-        <Typography className={classes.box}>Закажите #картукарту</Typography>
-        <Typography className={classes.box}>прямо сейчас</Typography>
-        <form onSubmit={handleSubmit}>
+        <Typography className={classes.box}>
+          Заполните заявку <br />и получите #картакарта
+        </Typography>
+        <form onSubmit={handleSubmit} className={classes.form}>
           <TextField
             size={isXS ? "small" : "medium"}
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             id="name"
             label="Имя"
@@ -226,7 +222,6 @@ const CardOrder = (props: any) => {
             size={isXS ? "small" : "medium"}
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             name="phone"
             value={phoneNumber}
@@ -238,6 +233,7 @@ const CardOrder = (props: any) => {
             }}
           />
           <FormControlLabel
+            className={classes.formControlCheckBox}
             control={
               <Checkbox
                 value="remember"
@@ -248,7 +244,7 @@ const CardOrder = (props: any) => {
             }
             label={
               <Typography className={classes.checkBoxLabel}>
-                Я согласен(а) с условиями
+                Я согласен(а) на сбор и обработку персональных данных
               </Typography>
             }
           />

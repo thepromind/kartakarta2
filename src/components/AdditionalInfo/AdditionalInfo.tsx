@@ -151,7 +151,7 @@ const Documents = () => {
                 {
                   <Typography>
                     <img src="pdf.svg" alt="pdf" />
-                      &nbsp; {m}
+                    &nbsp; {m}
                   </Typography>
                 }
               </TableCell>

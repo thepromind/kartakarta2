@@ -97,7 +97,7 @@ const MobileBanking = () => {
           <Grid container alignItems="center" className={classes.descBlock}>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
               <Typography className={classes.title}>
-                Мобильное приложение Starbanking
+                Мобильное приложение StarBanking
               </Typography>
               <Typography className={classes.description}>
                 Оплачивайте услуги, управляйте рассрочкой и кешбэком,

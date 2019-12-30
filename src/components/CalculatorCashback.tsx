@@ -318,7 +318,7 @@ const CaclulatorCashBack = (props: any) => {
           <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
             <Paper elevation={0} className={classes.result}>
               <Typography align="center" className={classes.resultTitle}>
-                Ваш кешбэк с картой #КартаКарта
+                Ваш кешбэк с картой #картакарта
               </Typography>
               <Typography align="center" className={classes.resultSum}>
                 <NumberFormat
@@ -333,7 +333,7 @@ const CaclulatorCashBack = (props: any) => {
                   onClick={() => onClickIssue()}
                   className={classes.resultOrderCard}
                 >
-                  Оформить карту
+                  Заказать карту
                 </Button>
               </Typography>
             </Paper>
