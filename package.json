@@ -1,6 +1,6 @@
 {
-  "homepage": "http://sunnatilla.github.io/app-type",
-  "name": "app-type",
+  "homepage": "http://shontykov.github.io/cardcard",
+  "name": "cardcard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
