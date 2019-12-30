@@ -106,20 +106,24 @@ const MobileBanking = () => {
               </Typography>
               <Grid container spacing={3}>
                 <Grid item>
-                  <img
-                    onClick={() => onClickAppStore()}
-                    className={classes.googlePlayAppStore}
-                    src="app_store.svg"
-                    alt="app_store"
-                  />
+                  <a href="https://apps.apple.com/kz/app/starbanking/id743617904">
+                    <img
+                      onClick={() => onClickAppStore()}
+                      className={classes.googlePlayAppStore}
+                      src="app_store.svg"
+                      alt="app_store"
+                    />
+                  </a>
                 </Grid>
                 <Grid item>
-                  <img
-                    onClick={() => onClickGooglePlay()}
-                    className={classes.googlePlayAppStore}
-                    src="google_play.svg"
-                    alt="google_play"
-                  />
+                  <a href="https://play.google.com/store/apps/details?id=kz.bcc.starbanking&hl=ru">
+                    <img
+                      onClick={() => onClickGooglePlay()}
+                      className={classes.googlePlayAppStore}
+                      src="google_play.svg"
+                      alt="google_play"
+                    />
+                  </a>
                 </Grid>
               </Grid>
             </Grid>
