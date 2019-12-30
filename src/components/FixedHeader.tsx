@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     [theme.breakpoints.down("sm")]: {
+      cardImage: {
+        display: "none"
+      },
       hide: {
         opacity: 0,
         transition: "all ease-in-out .3s"
@@ -61,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: 100,
         width: "100%",
         boxSizing: "border-box",
-        padding: "21px 52px",
+        padding: "12px 26px",
         backgroundColor: "#ffffff",
         boxShadow: "0px 7px 25px rgba(29, 29, 29, 0.15)",
         transition: "all ease-in-out .3s"
@@ -125,12 +128,24 @@ const FixedHeader = (props: any) => {
           alignItems="center"
           container
         >
-          <Grid item xl={3} lg={3} md={6} sm={6} xs={6}>
-            <img src="iconcardsmall.svg" />
+          <Grid
+            item
+            xl={3}
+            lg={3}
+            md={6}
+            sm={6}
+            xs={6}
+            className={classes.cardImage}
+          >
+            <img src="icon_card_small.svg" />
           </Grid>
           <Grid item xl={3} lg={3} md={6} sm={6} xs={6}>
             <Link smooth={true} to="order">
-              <Button variant="contained" className={classes.buttonOrderCard}>
+              <Button
+                variant="contained"
+                className={classes.buttonOrderCard}
+                onClick={() => props.scrollToOrder()}
+              >
                 Заказать карту
               </Button>
             </Link>
