@@ -217,7 +217,7 @@ const CardOrder = (props: any) => {
             required
             fullWidth
             id="name"
-            label="Фамилия, имя и отчество"
+            label="Имя"
             name="name"
             value={fio}
             onChange={(e: any) => setFio(e.target.value)}

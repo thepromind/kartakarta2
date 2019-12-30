@@ -30,7 +30,7 @@ function App() {
       <Header scrollToOrder={scrollToOrderRef} />
       <BestCard />
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
-      <CalculatorCashback />
+      <CalculatorCashback scrollToOrder={scrollToOrderRef} />
       <HowToGetCard />
       <CardOrder refProp={orderRef} send={() => setSend(true)} />
       <MobileBanking />
