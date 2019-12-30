@@ -9,7 +9,8 @@ import {
   MobileBanking,
   AdditionalInfo,
   GoodAnyTimeWhere,
-  Footer
+  Footer,
+  FixedHeader
 } from "./components";
 
 import { YMInitializer } from "react-yandex-metrika";
@@ -28,6 +29,7 @@ function App() {
         accounts={[Number.parseInt(process.env.REACT_APP_Y_ANALYTICS || "")]}
       />
       <Header scrollToOrder={scrollToOrderRef} />
+      <FixedHeader />
       <BestCard />
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />

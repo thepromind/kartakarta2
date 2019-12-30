@@ -122,7 +122,7 @@ const BestCard = (props: any) => {
   const classes = useStyles({});
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container className={classes.root} id="secondHeader">
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
         <Typography className={classes.mainTitle}>Лучшая карта</Typography>
         <Typography className={classes.mainDescription}>
