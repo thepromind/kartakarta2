@@ -249,6 +249,7 @@ const CaclulatorCashBack = (props: any) => {
       category: "BccCard",
       action: "button_Get"
     });
+    props.scrollToOrder();
   };
 
   return (
@@ -332,7 +333,7 @@ const CaclulatorCashBack = (props: any) => {
                   onClick={() => onClickIssue()}
                   className={classes.resultOrderCard}
                 >
-                  Оформить
+                  Оформить карту
                 </Button>
               </Typography>
             </Paper>

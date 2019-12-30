@@ -191,7 +191,7 @@ const Header = (props: any) => {
                 variant="contained"
                 className={classes.buttonOrderCard}
               >
-                Заказать карту
+                Оформить карту
               </Button>
             </Grid>
           </Grid>
