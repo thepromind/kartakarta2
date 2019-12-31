@@ -15,11 +15,13 @@ import {
 
 import { YMInitializer } from "react-yandex-metrika";
 import SnackBarBottom from "./components/SnackBar";
+import * as Scroll from "react-scroll";
 
 function App() {
   const orderRef: any = React.useRef(null);
 
-  const scrollToOrderRef = () => window.scrollTo(0, orderRef.current.offsetTop);
+  const scrollToOrderRef = () =>
+    Scroll.animateScroll.scrollTo(0, orderRef.current.offsetTop);
 
   const [isSend, setSend] = React.useState<boolean>(false);
 
