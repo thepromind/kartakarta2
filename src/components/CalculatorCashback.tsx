@@ -246,7 +246,7 @@ const CaclulatorCashBack = (props: any) => {
 
   const onClickIssue = () => {
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_button_Get",
       action: "button_Get"
     });
     props.scrollToOrder();

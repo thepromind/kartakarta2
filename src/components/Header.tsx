@@ -124,7 +124,7 @@ const Header = (props: any) => {
 
   const eventGAOrderCard = () => {
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_1button_to_order_card",
       action: "1button_to_order_card"
     });
     props.scrollToOrder();

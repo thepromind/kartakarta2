@@ -374,7 +374,7 @@ const Installment = (props: any) => {
     setShowNote(val);
 
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_to_uncover",
       action: "to_uncover"
     });
   };

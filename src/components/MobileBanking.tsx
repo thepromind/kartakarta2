@@ -78,16 +78,24 @@ const MobileBanking = () => {
 
   const onClickAppStore = () => {
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_AppStore_download",
       action: "AppStore_download"
     });
+    window.open(
+      "https://apps.apple.com/kz/app/starbanking/id743617904",
+      "_blank"
+    );
   };
 
   const onClickGooglePlay = () => {
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_GooglePlay_download",
       action: "GooglePlay_download"
     });
+    window.open(
+      "https://play.google.com/store/apps/details?id=kz.bcc.starbanking&hl=ru",
+      "_blank"
+    );
   };
 
   return (

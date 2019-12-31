@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         "&:disabled": {
           backgroundColor: "#3F0259",
-          opacity: 0.4,
+          opacity: 0.6,
           boxShadow: "none",
           color: "#FFFFFF"
         }
@@ -174,7 +174,7 @@ const CardOrder = (props: any) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_kartakarta_Apply_Success",
       action: "kartakarta_Apply_Success"
     });
 

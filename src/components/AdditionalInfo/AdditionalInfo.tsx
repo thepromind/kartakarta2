@@ -209,9 +209,19 @@ const AdditionalInfo = () => {
   const classes = useStyles({});
 
   const swipeTab = (index: number) => {
+    let actionName = "Additional_Conditions";
+
+    if (index === 1) {
+      actionName = "Additional_Rates";
+    } else if (index === 2) {
+      actionName = "Additionally_FAQ";
+    } else if (index === 3) {
+      actionName = "Additionally_Documents";
+    }
+
     ReactGA.event({
-      category: "BccCard",
-      action: index === 0 ? "Additional_Rates" : "Additionally_FAQ"
+      category: `BccCard_${actionName}`,
+      action: actionName
     });
   };
 

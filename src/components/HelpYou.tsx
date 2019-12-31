@@ -97,9 +97,18 @@ const HelpYou = () => {
 
   const onClickCall505 = () => {
     ReactGA.event({
-      category: "BccCard",
+      category: "BccCard_call_505",
       action: "call_505"
     });
+    window.open("tel:505");
+  };
+
+  const onClickCallMB = () => {
+    ReactGA.event({
+      category: "BccCard_iron_call_2443030",
+      action: "iron_call_2443030"
+    });
+    window.open("tel:87272443030");
   };
 
   return (
@@ -120,7 +129,7 @@ const HelpYou = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item className={classes.paper}>
+        <Grid item onClick={() => onClickCallMB()} className={classes.paper}>
           <Typography className={classes.phone}>
             <PhoneAndroid className={classes.phone} /> 8 (727) 244 30 30
           </Typography>
