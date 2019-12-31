@@ -30,7 +30,10 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       googlePlayAppStore: {
         width: 120,
-        height: 40
+        height: 40,
+        "&:hover": {
+          cursor: "pointer"
+        }
       },
       img: {
         width: 165,
@@ -64,6 +67,11 @@ const useStyles = makeStyles((theme: Theme) =>
         color: "#141414",
         marginBottom: 48
       },
+      googlePlayAppStore: {
+        "&:hover": {
+          cursor: "pointer"
+        }
+      },
       img: {
         width: 330,
         height: 484,
@@ -81,6 +89,7 @@ const MobileBanking = () => {
       category: "BccCard_AppStore_download",
       action: "AppStore_download"
     });
+
     window.open(
       "https://apps.apple.com/kz/app/starbanking/id743617904",
       "_blank"
@@ -92,6 +101,7 @@ const MobileBanking = () => {
       category: "BccCard_GooglePlay_download",
       action: "GooglePlay_download"
     });
+
     window.open(
       "https://play.google.com/store/apps/details?id=kz.bcc.starbanking&hl=ru",
       "_blank"
@@ -114,24 +124,20 @@ const MobileBanking = () => {
               </Typography>
               <Grid container spacing={3}>
                 <Grid item>
-                  <a href="https://apps.apple.com/kz/app/starbanking/id743617904">
-                    <img
-                      onClick={() => onClickAppStore()}
-                      className={classes.googlePlayAppStore}
-                      src="app_store.svg"
-                      alt="app_store"
-                    />
-                  </a>
+                  <img
+                    onClick={() => onClickAppStore()}
+                    className={classes.googlePlayAppStore}
+                    src="app_store.svg"
+                    alt="app_store"
+                  />
                 </Grid>
                 <Grid item>
-                  <a href="https://play.google.com/store/apps/details?id=kz.bcc.starbanking&hl=ru">
-                    <img
-                      onClick={() => onClickGooglePlay()}
-                      className={classes.googlePlayAppStore}
-                      src="google_play.svg"
-                      alt="google_play"
-                    />
-                  </a>
+                  <img
+                    onClick={() => onClickGooglePlay()}
+                    className={classes.googlePlayAppStore}
+                    src="google_play.svg"
+                    alt="google_play"
+                  />
                 </Grid>
               </Grid>
             </Grid>
