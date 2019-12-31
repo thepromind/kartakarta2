@@ -182,6 +182,8 @@ const CardOrder = (props: any) => {
       api.card
         .order({ fio, phoneNumber })
         .then(m => {
+          setFio("");
+          setPhoneNumber("");
           props.send();
         })
         .catch(e => console.warn(e));
