@@ -42,6 +42,13 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
         fontWeight: "normal",
         fontSize: 16,
         color: "black"
+      },
+      a: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 16,
+        color: "black",
+        textDecoration: "none"
       }
     }
   })
@@ -85,10 +92,20 @@ const Tarifs = () => {
           <TableRow key={15}>
             <TableCell colSpan={2} className={classes.td}>
               {
-                <span>
-                  <img src="pdf.svg" alt="pdf" />
-                  &nbsp; Детальные тарифы.pdf
-                </span>
+                <div>
+                  <Typography>
+                    <a href="tarifs_kz.pdf" className={classes.a}>
+                      <img src="pdf.svg" alt="pdf" />
+                      &nbsp; Тарифы на казахском
+                    </a>
+                  </Typography>
+                  <Typography>
+                    <a href="tarifs_ru.pdf" className={classes.a}>
+                      <img src="pdf.svg" alt="pdf" />
+                      &nbsp; Тарифы на русском
+                    </a>
+                  </Typography>
+                </div>
               }
             </TableCell>
           </TableRow>

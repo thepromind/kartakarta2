@@ -31,7 +31,7 @@ function App() {
         accounts={[Number.parseInt(process.env.REACT_APP_Y_ANALYTICS || "")]}
       />
       <Header scrollToOrder={scrollToOrderRef} />
-      <FixedHeader />
+      <FixedHeader scrollToOrder={scrollToOrderRef} />
       <BestCard />
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />

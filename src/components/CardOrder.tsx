@@ -56,14 +56,15 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 12
       },
       submit: {
-        background: "#FFCF87",
+        background: "#3F0259",
         borderRadius: 4,
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: 500,
         fontStyle: "normal",
         boxShadow: "none",
         textTransform: "none",
         height: 40,
+        color: "#FFFFFF",
         "&:hover, &:active": {
           backgroundColor: "#3F0259",
           borderColor: "#3F0259",
@@ -72,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
           color: "#FFFFFF"
         },
         "&:disabled": {
-          backgroundColor: "#FFCF87",
+          backgroundColor: "#3F0259",
           opacity: 0.4,
           boxShadow: "none",
           color: "#FFFFFF"
@@ -118,7 +119,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 14
       },
       submit: {
-        background: "#FFCF87",
+        background: "#3F0259",
         borderRadius: "8px",
         fontSize: "20px",
         lineHeight: "28px",
@@ -127,6 +128,7 @@ const useStyles = makeStyles((theme: Theme) =>
         textTransform: "none",
         boxShadow: "none",
         height: "62px",
+        color: "#FFFFFF",
         "&:hover, &:active": {
           backgroundColor: "#3F0259",
           borderColor: "#3F0259",
@@ -135,7 +137,7 @@ const useStyles = makeStyles((theme: Theme) =>
           color: "#FFFFFF"
         },
         "&:disabled": {
-          backgroundColor: "#FFCF87",
+          backgroundColor: "#3F0259",
           opacity: 0.4,
           boxShadow: "none",
           color: "#FFFFFF"
