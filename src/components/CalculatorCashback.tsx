@@ -285,6 +285,7 @@ const CaclulatorCashBack = (props: any) => {
                 <PrettoSlider
                   min={0}
                   max={400000}
+                  step={10000}
                   valueLabelDisplay="off"
                   aria-label="pretto slider"
                   defaultValue={spendingSum}
