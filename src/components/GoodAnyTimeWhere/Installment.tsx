@@ -172,6 +172,14 @@ const useStyles = makeStyles((theme: Theme) =>
         width: 165,
         height: 242,
         marginTop: 25
+      },
+      spanPartners: {
+        color: "#3F0259",
+        cursor: "pointer",
+        "&:hover": {
+          textDecoration: "underline"
+        },
+        fontStyle: "bold"
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -336,6 +344,14 @@ const useStyles = makeStyles((theme: Theme) =>
         width: 205,
         height: 300,
         marginTop: 20
+      },
+      spanPartners: {
+        color: "#3F0259",
+        cursor: "pointer",
+        "&:hover": {
+          textDecoration: "underline"
+        },
+        fontStyle: "bold"
       }
     }
   })
@@ -412,6 +428,21 @@ const Installment = (props: any) => {
           : 0;
     });
     return result;
+  };
+
+  const onClickPartners = () => {
+    ReactGA.event({
+      category: "BccCard_partners_mode_install",
+      action: "partners_mode_install"
+    });
+  };
+
+  const onClickOrderButton = () => {
+    ReactGA.event({
+      category: "BccCard_Button_first_purchase",
+      action: "Button_first_purchase"
+    });
+    props.scrollToOrder();
   };
 
   return (
@@ -633,13 +664,19 @@ const Installment = (props: any) => {
                   <Typography className={classes.noteDetail}>
                     4. С включенным режимом рассрочки все ваши покупки по
                     #картакарта от 5 000 ₸ за счет кредитного лимита будут
-                    делиться на равные части без комиссий в сети партнеров
+                    делиться на равные части без комиссий в сети{" "}
+                    <span
+                      className={classes.spanPartners}
+                      onClick={() => onClickPartners()}
+                    >
+                      партнеров
+                    </span>
                   </Typography>
                   <Typography className={classes.noteDetail}>
                     <Button
                       variant="outlined"
                       className={classes.noteDetailButton}
-                      onClick={() => props.scrollToOrder()}
+                      onClick={() => onClickOrderButton()}
                     >
                       Оформить рассрочку
                     </Button>

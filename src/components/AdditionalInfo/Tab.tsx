@@ -53,7 +53,7 @@ interface StyledTabsProps {
   onChange: (event: React.ChangeEvent<{}>, newValue: number) => void;
 }
 
-const StyledTabs = withStyles({  
+const StyledTabs = withStyles({
   indicator: {
     display: "flex",
     justifyContent: "center",
@@ -80,14 +80,16 @@ interface SimpleTabsProps {
 export default function SimpleTabs(props: SimpleTabsProps) {
   const classes = useStyles({});
   const [value, setValue] = React.useState(0);
+  const { onHandleChanged } = props;
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
+    onHandleChanged(newValue);
   };
 
   const handleChangeIndex = (index: number) => {
     setValue(index);
-    props.onHandleChanged(index);
+    onHandleChanged(index);
   };
 
   return (
