@@ -17,21 +17,22 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 26,
         color: "#141414"
       },
       tabButtonsBlock: {
         marginTop: 10
       },
       tabButtonActive: {
-        paddingLeft: 24,
-        paddingRight: 24,
-        height: 30,
+        paddingLeft: 14,
+        paddingRight: 14,
+        height: 38,
         backgroundColor: "#FFCF87",
         borderRadius: 4,
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 14,
+        width: "100%",
         textTransform: "none",
         "&:hover, &:active": {
           backgroundColor: "#FFCF87",
@@ -39,15 +40,22 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       tabButton: {
-        paddingLeft: 24,
-        paddingRight: 24,
-        height: 30,
+        paddingLeft: 14,
+        paddingRight: 14,
+        height: 38,
         backgroundColor: "#E8E8E8",
         borderRadius: 4,
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 14,
+        width: "100%",
         textTransform: "none"
+      },
+      btn_p: {
+        '& > div': {
+          padding: "2px!important",
+          width: "50%"
+        }
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -123,7 +131,7 @@ const GoodAnyTimeWhere = (props: any) => {
           xs={12}
           className={classes.tabButtonsBlock}
         >
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className={classes.btn_p}>
             <Grid item>
               <Button
                 onClick={() => setCardType(CardType.Installment)}

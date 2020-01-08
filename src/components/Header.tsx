@@ -3,15 +3,17 @@ import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
 import ReactGA from "react-ga";
-
+import "../App.css"
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       root: {
-        background: "url(header-main.svg) no-repeat center center fixed",
-        backgroundSize: "cover",
+        background: "url(kartakarta.png) no-repeat center center fixed",
+        backgroundSize: "contain",
+        backgroundPosition: "top !important",
         padding: paddingDownSm,
-        height: 420
+        height: "480px",
+        paddingBottom: 0
       },
       logo_img: {
         width: "126px",
@@ -23,43 +25,51 @@ const useStyles = makeStyles((theme: Theme) =>
       cardTitle: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "24px",
+        fontSize: "32px",
         color: "white"
       },
       cardWhatYourWant: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: "12px",
+        fontSize: "18px",
         color: "white",
-        opacity: 0.87
+        opacity: 0.87,
+        marginBottom: 20
       },
       featureTitle: {
         fontStyle: "normal",
         fontWeight: 500,
         fontSize: "14px",
         color: "white",
-        marginTop: "30px"
+        marginTop: "3px"
       },
       featureDesc: {
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: "14px",
+        fontSize: "12px",
         color: "white",
         opacity: 0.54
       },
       buttonOrderCard: {
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: "10px",
-        height: "32px",
-        width: "116px",
+        fontSize: "15px",
+        height: "46px",
+        width: "50%",
         textTransform: "none",
-        marginTop: "32px",
+        marginTop: "10px",
         backgroundColor: "white",
         borderRadius: "2px",
         color: "#141414",
-        marginBottom: "75px"
-      }
+        marginBottom: "10px"
+      },
+      grid_header: {
+        margin: 0,
+        display: "grid",
+        '& > div': {
+          padding: "5px 0!important"
+        }
+      },
     },
     [theme.breakpoints.between("sm", "xl")]: {
       mainRoot: {
@@ -158,7 +168,7 @@ const Header = (props: any) => {
               </Typography>
             </Grid>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-              <Grid container spacing={6}>
+              <Grid container spacing={6} className={classes.grid_header}>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
                     Кредит - до 3 000 000 ₸

@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
       mainTitle: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 26,
         color: "#141414"
       },
       mainDescription: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 16,
         color: "#8B98A7",
         marginBottom: 10
       },
@@ -38,15 +38,17 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "10px",
-        color: "#141414"
+        fontSize: "18px",
+        color: "#141414",
+        lineHeight: 1
       },
       description: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: "9px",
+        fontSize: "14px",
         color: "#5B5B5B",
-        marginTop: 10
+        marginTop: 5,
+        lineHeight: 1.2
       },
       ul: {
         padding: 0,
@@ -57,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
       li: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: "9px",
+        fontSize: "14px",
         color: "#5B5B5B"
       }
     },

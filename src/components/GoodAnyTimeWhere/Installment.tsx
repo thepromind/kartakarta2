@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
       noteShow: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 16,
         color: "#5B5B5B",
         textAlign: "center",
         margin: "10px auto 10px auto"
@@ -110,13 +110,13 @@ const useStyles = makeStyles((theme: Theme) =>
       tableBlockLeftTitle: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 12,
+        fontSize: 16,
         color: "#141414"
       },
       tableBlockLeftDesc: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 14,
         color: "#5B5B5B"
       },
       tableBlockLeftCommision: {
@@ -128,37 +128,37 @@ const useStyles = makeStyles((theme: Theme) =>
       tableBlockLeftCommisionText: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 14,
         color: "#898989"
       },
       tableMoth: {
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: 10,
+        fontSize: 14,
         color: "#898989"
       },
       tableTotalPrice: {
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: 10,
+        fontSize: 16,
         color: "black"
       },
       tableTd: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 16,
         color: "black"
       },
       tableProductName: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 12,
         color: "#5B5B5B"
       },
       tableProductPrice: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 12,
         color: "#B9B9B9"
       },
       tableCell: {

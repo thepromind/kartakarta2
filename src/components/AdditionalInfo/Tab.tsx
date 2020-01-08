@@ -65,7 +65,9 @@ const StyledTabs = withStyles({
     height: 3
   },
   flexContainer: {
-    borderBottom: "1px solid #C4C4C4"
+    borderBottom: "1px solid #C4C4C4",
+    width: "100%",
+    overflowX: "scroll"
   }
 })((props: StyledTabsProps) => (
   <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />

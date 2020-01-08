@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       mainTitle: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "20px"
+        fontSize: "26px"
       },
       step: {
         fontStyle: "normal",
@@ -24,18 +24,28 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 14,
+        fontSize: 18,
         color: "#141414"
       },
       description: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 14,
         color: "#5B5B5B"
       },
+      arrow_m: {
+        display: "flex",
+        justifyContent: "center",
+        padding: "3px 32px!important"
+      },
       arrow: {
-        width: 20,
-        height: 20
+        width: 30,
+        height: 30,
+        transform: "rotate(90deg)"
+      },
+      steps_m: {
+        display: "grid",
+        textAlign: "center"
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -88,7 +98,7 @@ const HowToGetCard = (props: any) => {
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Grid container spacing={8}>
             <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
-              <Grid container spacing={8} alignItems="center">
+              <Grid container spacing={8} alignItems="center" className={classes.steps_m}>
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>1</Typography>
                   <Typography className={classes.title}>
@@ -105,13 +115,14 @@ const HowToGetCard = (props: any) => {
                   md={false}
                   sm={false}
                   xs={false}
+                  className={classes.arrow_m}
                 >
                   <img className={classes.arrow} src="arrow.svg" alt="arrow" />
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
-              <Grid container spacing={8} alignItems="center">
+              <Grid container spacing={8} alignItems="center" className={classes.steps_m}>
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>2</Typography>
                   <Typography className={classes.title}>
@@ -128,13 +139,14 @@ const HowToGetCard = (props: any) => {
                   md={false}
                   sm={false}
                   xs={false}
+                  className={classes.arrow_m}
                 >
                   <img className={classes.arrow} src="arrow.svg" alt="arrow" />
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
-              <Grid container spacing={8} alignItems="center">
+              <Grid container spacing={8} alignItems="center" className={classes.steps_m}>
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>3</Typography>
                   <Typography className={classes.title}>

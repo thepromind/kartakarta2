@@ -22,11 +22,13 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "white",
         border: "1px solid #E8E8E8",
         borderRadius: 8,
-        padding: 10,
-        width: 188,
-        height: 56,
+        padding: "2px!important",
+        width: "42%",
+        height: "100%",
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        display: "flex",
+        alignItems: "center"
       },
       ourSpec: {
         fontStyle: "normal",
@@ -37,8 +39,16 @@ const useStyles = makeStyles((theme: Theme) =>
       freeCall: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 14,
-        color: "#141414"
+        fontSize: 12,
+        color: "#141414",
+        display: "flex",
+        alignItems: "center",
+        "& > svg": {
+          padding: 8,
+          backgroundColor: "#27AE60",
+          borderRadius: 8,
+          color: "white"
+        }
       },
       phone: {
         fonStyle: "normal",
@@ -67,9 +77,11 @@ const useStyles = makeStyles((theme: Theme) =>
         border: "1px solid #E8E8E8",
         padding: 20,
         width: 376,
-        height: 112,
+        height: 104,
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        display: "flex",
+        alignItems: "center"
       },
       ourSpec: {
         fontStyle: "normal",
@@ -81,7 +93,15 @@ const useStyles = makeStyles((theme: Theme) =>
         fontStyle: "normal",
         fontWeight: "bold",
         fontSize: 28,
-        color: "#141414"
+        color: "#141414",
+        display: "flex",
+        alignItems: "center",
+        "& > svg": {
+          padding: 8,
+          backgroundColor: "#27AE60",
+          borderRadius: 8,
+          color: "white"
+        }
       },
       phone: {
         fonStyle: "normal",
@@ -115,7 +135,7 @@ const HelpYou = () => {
     <Grid container className={classes.mainRoot}>
       <Grid container className={classes.root} spacing={4} justify="center">
         <Grid item onClick={() => onClickCall505()} className={classes.paper}>
-          <Grid container spacing={2}>
+          <Grid container alignItems="center" spacing={2}>
             <Grid item xl={false} lg={false} md={false} sm={false} xs={false}>
               <Typography className={classes.freeCall}>
                 <Call className={classes.freeCall} />
@@ -130,9 +150,16 @@ const HelpYou = () => {
           </Grid>
         </Grid>
         <Grid item onClick={() => onClickCallMB()} className={classes.paper}>
-          <Typography className={classes.phone}>
-            <PhoneAndroid className={classes.phone} /> 8 (727) 244 30 30
-          </Typography>
+          <Grid container alignItems="center" spacing={2}>
+            <Grid item xl={false} lg={false} md={false} sm={false} xs={false}>
+              <Typography className={classes.freeCall}>
+                <PhoneAndroid className={classes.freeCall} />
+              </Typography>
+            </Grid>
+            <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
+              <Typography className={classes.freeCall}>8 (727) 244 30 30</Typography>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

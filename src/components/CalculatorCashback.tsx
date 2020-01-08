@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: "20px"
+        fontSize: "26px"
       },
       tabButtonActive: {
         width: "160px",
@@ -92,13 +92,13 @@ const useStyles = makeStyles((theme: Theme) =>
         color: "#141414"
       },
       resultOrderCard: {
-        width: "160px",
-        height: "32px",
+        width: "100%",
+        height: "40px",
         backgroundColor: "#3F0259",
         borderRadius: "8px",
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: "10px",
+        fontSize: "16px",
         textTransform: "none",
         color: "#FFFFFF",
         "&:hover, &:active": {
@@ -112,10 +112,10 @@ const useStyles = makeStyles((theme: Theme) =>
       monthSpending: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: "10px",
+        fontSize: "14px",
         color: "#141414",
         opacity: 0.7,
-        marginTop: "18px"
+        marginTop: "5px"
       },
       monthSpendingSum: {
         fontStyle: "normal",
@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 10,
         color: "#898989",
         opacity: 0.7,
-        marginTop: 20
+        marginTop: 10
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {

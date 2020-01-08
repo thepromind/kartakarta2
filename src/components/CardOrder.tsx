@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme: Theme) =>
       submit: {
         background: "#3F0259",
         borderRadius: 4,
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: 500,
         fontStyle: "normal",
         boxShadow: "none",
