@@ -687,7 +687,7 @@ const Installment = (props: any) => {
                     <img
                       className={classes.img}
                       src="installments_star_mobile_banking.gif"
-                      alt="installment_star_mobile_banking"
+                      alt="installments_star_mobile_banking"
                     />
                   </Grid>
                 </Grid>

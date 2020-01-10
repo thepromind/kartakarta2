@@ -3,14 +3,14 @@ import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
 import ReactGA from "react-ga";
-import "../App.css"
+import "../App.css";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
-      root: {
-        background: "url(kartakarta.png) no-repeat center center fixed",
-        backgroundSize: "contain",
-        backgroundPosition: "top !important",
+      mainRoot: {
+        background: "url(kartakarta2.png) no-repeat center center fixed",
+        backgroundSize: "cover",
+        backgroundPosition: "bottom !important",
         padding: paddingDownSm,
         height: "480px",
         paddingBottom: 0
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontWeight: 500,
         fontSize: "14px",
         color: "white",
-        marginTop: "3px"
+        marginTop: "3px!important"
       },
       featureDesc: {
         fontStyle: "normal",
@@ -66,10 +66,10 @@ const useStyles = makeStyles((theme: Theme) =>
       grid_header: {
         margin: 0,
         display: "grid",
-        '& > div': {
+        "& > div": {
           padding: "5px 0!important"
         }
-      },
+      }
     },
     [theme.breakpoints.between("sm", "xl")]: {
       mainRoot: {
@@ -78,6 +78,13 @@ const useStyles = makeStyles((theme: Theme) =>
         height: 580
       },
       ...rootSmXl,
+      root: {
+        background: "unset",
+        backgroundSize: "cover",
+        backgroundPosition: "top !important",
+        padding: paddingDownSm,
+        paddingBottom: 0
+      },
       logo_img: {
         width: "168px",
         height: "40px"
@@ -124,6 +131,11 @@ const useStyles = makeStyles((theme: Theme) =>
         borderRadius: "4px",
         color: "#141414",
         marginBottom: "150px"
+      }
+    },
+    [theme.breakpoints.between("sm", "md")]: {
+      mainRoot: {
+        height: 620
       }
     }
   })
