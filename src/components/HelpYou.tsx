@@ -157,7 +157,9 @@ const HelpYou = () => {
               </Typography>
             </Grid>
             <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
-              <Typography className={classes.freeCall}>8 (727) 244 30 30</Typography>
+              <Typography className={classes.freeCall}>
+                8 (727) 244 7777
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
