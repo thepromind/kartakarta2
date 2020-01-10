@@ -169,8 +169,8 @@ const useStyles = makeStyles((theme: Theme) =>
         overflowX: "auto"
       },
       img: {
-        width: 165,
-        height: 242,
+        width: "100%",
+        height: "100%",
         marginTop: 25
       },
       spanPartners: {
@@ -341,8 +341,8 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       img: {
-        width: 205,
-        height: 300,
+        width: 400,
+        height: 250,
         marginTop: 20
       },
       spanPartners: {
@@ -652,7 +652,7 @@ const Installment = (props: any) => {
                     Режим рассрочки
                   </Typography>
                   <Typography className={classes.noteDetail}>
-                    1. Выберите #картукарту из списка ваших доступных счетов.
+                    1. Выберите #картакарта из списка ваших доступных счетов.
                   </Typography>
                   <Typography className={classes.noteDetail}>
                     2. Нажмите на кнопку “Рассрочка”. В обычном состоянии режим
@@ -686,7 +686,7 @@ const Installment = (props: any) => {
                   <Grid container justify="center">
                     <img
                       className={classes.img}
-                      src="installment_star_mobile_banking.gif"
+                      src="installments_star_mobile_banking.gif"
                       alt="installment_star_mobile_banking"
                     />
                   </Grid>

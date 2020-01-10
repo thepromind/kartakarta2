@@ -134,7 +134,7 @@ const Conditions = () => {
       )
     },
     { code: "Процентная ставка (в рассрочку)", value: "0%" },
-    { code: "Кешбэк", value: "До 30%" }
+    { code: "Кешбэк", value: "до 30%" }
   ];
 
   return (

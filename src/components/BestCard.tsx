@@ -148,7 +148,7 @@ const BestCard = (props: any) => {
                 </Typography>
                 <Typography className={classes.description}>
                   Банк дает вам сумму до 3 000 000 ₸, <br />
-                  Вы решаете как оплачивать покупки: одним платежом или в
+                  Вы решаете, как оплачивать покупки: одним платежом или в
                   рассрочку
                 </Typography>
               </Grid>
