@@ -175,24 +175,42 @@ const Conditions = () => {
 const Documents = () => {
   const classes = useStylesTarifs({});
 
-  const rows = ["Кешбэк программа.pdf", "Программа рассрочки.pdf"];
+  const rows = ["Программа рассрочки.pdf"];
 
   return (
     <Box width={0.7}>
       <Table>
         <TableBody>
-          {rows.map((m, i) => (
-            <TableRow key={i}>
+            <TableRow>
               <TableCell colSpan={2} className={classes.td}>
-                {
                   <Typography>
+                    <a href="cashback_ru.pdf" className={classes.a}>
                     <img src="pdf.svg" alt="pdf" />
-                    &nbsp; {m}
+                    &nbsp; Кешбэк программа(рус.яз)
+                    </a>
                   </Typography>
-                }
               </TableCell>
             </TableRow>
-          ))}
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="#!" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Кешбэк программа(каз.яз)
+                </a>
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="#!" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Программа рассрочки(рус.яз)
+                </a>
+              </Typography>
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Box>
