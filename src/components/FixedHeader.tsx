@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.down("sm")]: {
       hide: {
+        display: "none",
         opacity: 0,
         transition: "all ease-in-out .3s"
       },
@@ -93,7 +94,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.down("xs")]: {
       header: {
-        padding: "16px 26px"
+        padding: "16px 26px",
+        disaplay: "block"
       },
       logo: {
         display: "none"

@@ -8,4 +8,4 @@ export const rootSmXl = {
   }
 };
 
-export const paddingDownSm = "18px 13px 18px 13px";
+export const paddingDownSm = "18px 20px 18px 20px";

@@ -1,26 +1,32 @@
 import React from "react";
 import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
+import {paddingDownSm, paddingSmXl, rootSmXl} from "./helper/DefaultStyle";
 import ReactGA from "react-ga";
 import "../App.css";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       mainRoot: {
-        background: "url(kartakarta2.png) no-repeat fixed",
+        background: "url(kartakarta4.png) no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "0% !important",
+        backgroundPosition: "top right!important",
         padding: paddingDownSm,
-        height: "480px",
-        paddingBottom: 0
+        height: "460px",
+        paddingBottom: 0,
+        paddingLeft: "18px",
+        paddingRight: "18px"
+      },
+      root: {
+        height: "400px",
+        alignContent: "space-between"
       },
       logo_img: {
         width: "126px",
         height: "30px"
       },
       cardDescriptionBlock: {
-        marginTop: "20px"
+        marginTop: "5px"
       },
       cardTitle: {
         fontStyle: "normal",
@@ -34,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "18px",
         color: "white",
         opacity: 0.87,
-        marginBottom: 20
+        marginBottom: 10
       },
       featureTitle: {
         fontStyle: "normal",
@@ -61,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "white",
         borderRadius: "2px",
         color: "#141414",
-        marginBottom: "10px"
+        marginBottom: "20px"
       },
       grid_header: {
         margin: 0,
@@ -82,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) =>
         background: "unset",
         backgroundSize: "cover",
         backgroundPosition: "top !important",
-        padding: paddingDownSm,
+        padding: paddingSmXl,
         paddingBottom: 0
       },
       logo_img: {
