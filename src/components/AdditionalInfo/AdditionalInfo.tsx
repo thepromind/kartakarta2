@@ -28,6 +28,16 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
         fontWeight: "normal",
         fontSize: 10,
         color: "black"
+      },
+      a: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 14,
+        color: "black",
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        margin: "4px 0"
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -48,7 +58,10 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
         fontWeight: "normal",
         fontSize: 16,
         color: "black",
-        textDecoration: "none"
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        margin: "4px 0"
       }
     }
   })

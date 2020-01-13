@@ -8,9 +8,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       mainRoot: {
-        background: "url(kartakarta2.png) no-repeat center center fixed",
+        background: "url(kartakarta2.png) no-repeat fixed",
         backgroundSize: "cover",
-        backgroundPosition: "bottom !important",
+        backgroundPosition: "0% !important",
         padding: paddingDownSm,
         height: "480px",
         paddingBottom: 0
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
       buttonOrderCard: {
         fontStyle: "normal",
         fontWeight: 500,
-        fontSize: "15px",
+        fontSize: "13px",
         height: "46px",
         width: "50%",
         textTransform: "none",
@@ -136,6 +136,11 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.between("sm", "md")]: {
       mainRoot: {
         height: 620
+      }
+    },
+    [theme.breakpoints.between("lg", "xl")]: {
+      mainRoot: {
+        height: 680
       }
     }
   })
