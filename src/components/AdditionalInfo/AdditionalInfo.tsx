@@ -96,19 +96,19 @@ const Tarifs = () => {
                   <Typography>
                     <a href="tarifs_kz.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы на казахском
+                      &nbsp; Тарифы(каз.яз)
                     </a>
                   </Typography>
                   <Typography>
                     <a href="tarifs_ru.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы на русском
+                      &nbsp; Тарифы(рус.яз)
                     </a>
                   </Typography>
                   <Typography>
                     <a href="tarifs_en.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы на английском
+                      &nbsp; Тарифы(англ.яз)
                     </a>
                   </Typography>
                 </div>

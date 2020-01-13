@@ -22,7 +22,7 @@ function App() {
 
   const scrollToOrderRef = (flag: boolean) =>
     Scroll.animateScroll.scrollTo(
-      flag ? orderRef.current.offsetTop - 80 : orderRef.current.offsetTop - 80
+      flag ? orderRef.current.offsetTop - 140 : orderRef.current.offsetTop - 80
     );
 
   const [isSend, setSend] = React.useState<boolean>(false);
