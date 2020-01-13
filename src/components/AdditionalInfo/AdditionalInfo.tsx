@@ -105,6 +105,12 @@ const Tarifs = () => {
                       &nbsp; Тарифы на русском
                     </a>
                   </Typography>
+                  <Typography>
+                    <a href="tarifs_en.pdf" className={classes.a}>
+                      <img src="pdf.svg" alt="pdf" />
+                      &nbsp; Тарифы на английском
+                    </a>
+                  </Typography>
                 </div>
               }
             </TableCell>

@@ -20,8 +20,10 @@ import * as Scroll from "react-scroll";
 function App() {
   const orderRef: any = React.useRef(null);
 
-  const scrollToOrderRef = () =>
-    Scroll.animateScroll.scrollTo(orderRef.current.offsetTop - 70);
+  const scrollToOrderRef = (flag: boolean) =>
+    Scroll.animateScroll.scrollTo(
+      flag ? orderRef.current.offsetTop - 80 : orderRef.current.offsetTop - 80
+    );
 
   const [isSend, setSend] = React.useState<boolean>(false);
 
