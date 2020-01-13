@@ -283,6 +283,7 @@ const CardOrder = (props: any) => {
                 variant="contained"
                 className={classes.submit}
                 disabled={!isValid()}
+                onClick={() => "yaCounter56824144.reachGoal('goal_id'); return true;"}
               >
                 Подать заявку
               </Button>
