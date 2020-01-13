@@ -13,7 +13,6 @@ import {
   FixedHeader
 } from "./components";
 
-import { YMInitializer } from "react-yandex-metrika";
 import SnackBarBottom from "./components/SnackBar";
 import * as Scroll from "react-scroll";
 
@@ -29,9 +28,6 @@ function App() {
 
   return (
     <div>
-      <YMInitializer
-        accounts={[Number.parseInt(process.env.REACT_APP_Y_ANALYTICS || "")]}
-      />
       <Header scrollToOrder={scrollToOrderRef} />
       <FixedHeader scrollToOrder={scrollToOrderRef} />
       <BestCard />
