@@ -630,7 +630,7 @@ const Installment = (props: any) => {
                   </div>
                 ) : (
                   <div className={classes.noteShow}>
-                    Расскрыть <ArrowDropDown className={classes.noteIcons} />
+                    Раскрыть <ArrowDropDown className={classes.noteIcons} />
                   </div>
                 )}
               </Grid>
