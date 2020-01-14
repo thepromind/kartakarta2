@@ -15,6 +15,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ReactGA from "react-ga";
 import api from "../api/Api";
 import MaskedInput from "react-maskedinput";
+import ym from "react-yandex-metrika";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -188,7 +189,9 @@ const CardOrder = (props: any) => {
         })
         .catch(e => console.warn(e));
     }
+    ym("reachGoal", "send_mess");
   };
+
   const classes = useStyles({});
 
   const theme = useTheme();
@@ -283,7 +286,6 @@ const CardOrder = (props: any) => {
                 variant="contained"
                 className={classes.submit}
                 disabled={!isValid()}
-                onClick={() => "yaCounter56824144.reachGoal('goal_id'); return true;"}
               >
                 Подать заявку
               </Button>
