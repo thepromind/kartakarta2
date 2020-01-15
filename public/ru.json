@@ -1,0 +1,47 @@
+{
+  "header.title.main": "#картакарта",
+  "header.subtitle.desc": "бери для всего, что ты хочешь",
+  "header.title_2.desc": "Кредит - до 3 000 000 ₸",
+  "header.subtitle_2.desc": "Без процентов - до 55 дней",
+  "header.title_3.desc": "Рассрочка без процентов",
+  "header.subtitle_3.desc": "До 12 месяцев",
+  "header.title_4.desc": "до 30%",
+  "header.subtitle_4.desc": "Кешбэк",
+  "header.button.main": "Заказать карту"
+},
+{
+    "block_2.title.main": "Лучшая карта",
+    "block_2.subtitle.desc": "во всех смыслах этого слова",
+    "block_2.title_2.desc": "Рассрочка и кредитка в одном пластике",
+    "block_2.subtitle_2.desc": "Банк дает вам сумму до 3 000 000 ₸, <br /> Вы решаете, как оплачивать покупки: одним платежом или в рассрочку",
+    
+    "block_2.title_3.desc": "Кешбэк до 30%",
+    "block_2.subtitle_3.desc": "1% с любой личной покупки картой (2% при вкладе Рахмет/Рахмет+ от 1 000 000 ₸)",
+    "block_2.subtitle_3_1.desc": "до 10% в любимых категориях",
+    "block_2.subtitle_3_2.desc": "до 30% у наших партнеров",
+
+    "block_2.title_4.desc": "Проценты? Не, не слышали",
+    "block_2.subtitle_4.desc": "Тратьте и возвращайте деньги, выданные Банком, без процентов до 55 дней",
+    "block_2.subtitle_4_1.desc": "Покупайте у наших партнеров в рассрочку без переплат",
+
+    "block_2.title_5.desc": "Бесплатно",
+    "block_2.subtitle_5.desc": "Выпуск и обслуживание карты",
+    "block_2.subtitle_5_1.desc": "СМС уведомления",
+    "block_2.subtitle_5_1.desc": "Снятие личных средств до 300 000 ₸ в мес. в любом банкомате РК",
+  }
+  {
+    "block_3.title.main": "Хороша всегда и везде",
+    "block_3.button_1.tab_1": "Умная рассрочка",
+    "block_3.button_2.tab_2": "Кредитная карта",
+
+    "block_3.title_2.tab_1": "Умная рассрочка до 12 месяцев",
+    "block_3.subtitle_2.tab_1": "Управление в StarBanking 24/7",
+    
+    "block_3.tableTitle.tab_1": "В сети партнеров Банка",
+    "block_3.tableSubtitle_2.tab_1": "3, 6, или 12 месяцев",
+    "block_3.tableSubtitle_3.tab_1": "комиссия",
+    
+    "block_3.collapseTitle.tab_1": "Подсказка",
+    "block_3.collapseSubtitle_2.tab_1": "3, 6, или 12 месяцев",
+    "block_3.collapseSubtitle_3.tab_1": "комиссия",
+  }
