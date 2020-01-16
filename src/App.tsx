@@ -38,6 +38,7 @@ function App() {
           webvisor: true,
           trackHash: true
         }}
+        version="2"
       />
       <Header scrollToOrder={scrollToOrderRef} />
       <FixedHeader scrollToOrder={scrollToOrderRef} />
