@@ -179,13 +179,40 @@ const CardOrder = (props: any) => {
       action: "kartakarta_Apply_Success"
     });
 
+    const time: any = new Date();
+
+    let itemsArrayHelp: any = [];
+    itemsArrayHelp.push(["11111111111", time]);
+
+    let itemsArray = localStorage.getItem("items")
+      ? JSON.parse(localStorage.getItem("items")!)
+      : [itemsArrayHelp];
+
+    const data = JSON.parse(localStorage.getItem("items")!);
+    console.log(itemsArray);
+
     if (phoneNumber && setPhoneNumber) {
+      for (let i = itemsArray.length - 1; i >= 0; i--) {
+        if (itemsArray[i][0] == phoneNumber) {
+          if (time - Date.parse(itemsArray[i][1]) < 1000 * 60 * 15) {
+            props.snackUp(
+              "Мы уже получили Вашу заявку. Ждите звонка или можете попробовать через 15 минут."
+            );
+            return;
+          }
+        }
+      }
+
       api.card
         .order({ fio, phoneNumber })
         .then(m => {
           setFio("");
           setPhoneNumber("");
-          props.send();
+          itemsArray.push([phoneNumber, time]);
+          localStorage.setItem("items", JSON.stringify(itemsArray));
+          props.snackUp(
+            "Заявка успешно отправлена. Ваш менеджер перезвонит Вам в течение 15 минут."
+          );
         })
         .catch(e => console.warn(e));
     }

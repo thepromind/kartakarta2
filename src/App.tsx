@@ -26,6 +26,11 @@ function App() {
     );
 
   const [isSend, setSend] = React.useState<boolean>(false);
+  const [message, setMessage] = React.useState<string>("default");
+  const snackUp = (message: string) => {
+    setMessage(message);
+    setSend(true);
+  };
 
   return (
     <div>
@@ -45,12 +50,19 @@ function App() {
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />
       <HowToGetCard />
-      <CardOrder refProp={orderRef} send={() => setSend(true)} />
+      <CardOrder
+        refProp={orderRef}
+        snackUp={(message: string) => snackUp(message)}
+      />
       <MobileBanking />
       <AdditionalInfo />
       <HelpYou />
       <Footer />
-      <SnackBarBottom open={isSend} close={() => setSend(false)} />
+      <SnackBarBottom
+        open={isSend}
+        message={message}
+        close={() => setSend(false)}
+      />
     </div>
   );
 }
