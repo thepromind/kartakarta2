@@ -109,7 +109,7 @@ const Tarifs = () => {
                   <Typography>
                     <a href="tarifs_kz.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы(каз.яз)
+                      &nbsp; Тарифтер(каз.яз)
                     </a>
                   </Typography>
                   <Typography>
@@ -121,7 +121,7 @@ const Tarifs = () => {
                   <Typography>
                     <a href="tarifs_en.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы(англ.яз)
+                      &nbsp; Tarif (англ.яз)
                     </a>
                   </Typography>
                 </div>
@@ -181,16 +181,16 @@ const Documents = () => {
     <Box width={0.7}>
       <Table>
         <TableBody>
-            <TableRow>
-              <TableCell colSpan={2} className={classes.td}>
-                  <Typography>
-                    <a href="cashback_ru.pdf" className={classes.a}>
-                    <img src="pdf.svg" alt="pdf" />
-                    &nbsp; Кешбэк программа(рус.яз)
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="cashback_ru.pdf" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Кешбэк программа(рус.яз)
                     </a>
-                  </Typography>
-              </TableCell>
-            </TableRow>
+              </Typography>
+            </TableCell>
+          </TableRow>
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>

@@ -542,43 +542,43 @@ const Installment = (props: any) => {
                               </Typography>
                             )
                           ) : (
-                            <Grid container>
-                              <Grid
-                                item
-                                xl={false}
-                                lg={false}
-                                md={false}
-                                sm={false}
-                                xs={false}
-                              >
-                                <img src={val.img} alt={val.name} />
-                              </Grid>
-                              <Grid
-                                item
-                                xl={true}
-                                lg={true}
-                                md={true}
-                                sm={true}
-                                xs={true}
-                              >
-                                <Typography
-                                  className={classes.tableProductName}
+                              <Grid container>
+                                <Grid
+                                  item
+                                  xl={false}
+                                  lg={false}
+                                  md={false}
+                                  sm={false}
+                                  xs={false}
                                 >
-                                  {val.name}
-                                </Typography>
-                                <Typography
-                                  className={classes.tableProductPrice}
+                                  <img src={val.img} alt={val.name} />
+                                </Grid>
+                                <Grid
+                                  item
+                                  xl={true}
+                                  lg={true}
+                                  md={true}
+                                  sm={true}
+                                  xs={true}
                                 >
-                                  <NumberFormat
-                                    value={val.price}
-                                    thousandSeparator={" "}
-                                    displayType="text"
-                                  />{" "}
-                                  ₸
+                                  <Typography
+                                    className={classes.tableProductName}
+                                  >
+                                    {val.name}
+                                  </Typography>
+                                  <Typography
+                                    className={classes.tableProductPrice}
+                                  >
+                                    <NumberFormat
+                                      value={val.price}
+                                      thousandSeparator={" "}
+                                      displayType="text"
+                                    />{" "}
+                                    ₸
                                 </Typography>
+                                </Grid>
                               </Grid>
-                            </Grid>
-                          ))}
+                            ))}
                       </TableCell>
                     ))}
                   </TableRow>
@@ -629,10 +629,10 @@ const Installment = (props: any) => {
                     Скрыть <ArrowDropUp className={classes.noteIcons} />
                   </div>
                 ) : (
-                  <div className={classes.noteShow}>
-                    Раскрыть <ArrowDropDown className={classes.noteIcons} />
-                  </div>
-                )}
+                    <div className={classes.noteShow}>
+                      Раскрыть <ArrowDropDown className={classes.noteIcons} />
+                    </div>
+                  )}
               </Grid>
             </Grid>
           </Grid>
