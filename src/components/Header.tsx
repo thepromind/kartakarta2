@@ -1,9 +1,12 @@
 import React from "react";
 import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import {paddingDownSm, paddingSmXl, rootSmXl} from "./helper/DefaultStyle";
+import { paddingDownSm, paddingSmXl, rootSmXl } from "./helper/DefaultStyle";
 import ReactGA from "react-ga";
 import "../App.css";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import { useTranslation } from 'react-i18next';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
@@ -148,13 +151,25 @@ const useStyles = makeStyles((theme: Theme) =>
       mainRoot: {
         height: 680
       }
+    },
+    select: {
+      color: 'white',
+      '&:before': {
+        borderColor: 'white',
+      },
+      '&:after': {
+        borderColor: 'white',
+      }
+    },
+    icon: {
+      fill: 'white',
     }
   })
 );
 
 const Header = (props: any) => {
   const classes = useStyles({});
-
+  const { t, i18n } = useTranslation();
   const eventGAOrderCard = () => {
     ReactGA.event({
       category: "BccCard_1button_to_order_card",
@@ -162,6 +177,10 @@ const Header = (props: any) => {
     });
     props.scrollToOrder(true);
   };
+
+  const handleLangChange = (lang: any) => {
+    props.changeLang(lang)
+  }
 
   return (
     <Grid container className={classes.mainRoot}>
@@ -177,43 +196,57 @@ const Header = (props: any) => {
                 />
               </div>
             </Grid>
-            <Grid item xl={6} lg={6} md={6} sm={6} xs={6}></Grid>
+            <Grid item xl={6} lg={6} md={6} sm={6} xs={6} style={{ textAlign: 'right' }}>
+              <Select
+                className={classes.select}
+                value={props.lang}
+                onChange={(e: any) => handleLangChange(e.target.value)}
+                inputProps={{
+                  classes: {
+                    icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value="ru">Рус</MenuItem>
+                <MenuItem value="kz">Каз</MenuItem>
+              </Select>
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Grid container className={classes.cardDescriptionBlock}>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-              <Typography className={classes.cardTitle}>#картакарта</Typography>
+              <Typography className={classes.cardTitle}>{t('header.title')}</Typography>
             </Grid>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
               <Typography className={classes.cardWhatYourWant}>
-                бери для всего, что ты хочешь
+                {t('header.subtitle_desc')}
               </Typography>
             </Grid>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
               <Grid container spacing={6} className={classes.grid_header}>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
-                    Кредит - до 3 000 000 ₸
+                    {t('header.title_2_desc')}
                   </Typography>
                   <Typography className={classes.featureDesc}>
-                    Без процентов - до 55 дней
+                    {t('header.subtitle_2_desc')}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
-                    Рассрочка без процентов
+                    {t('header.title_3_desc')}
                   </Typography>
                   <Typography className={classes.featureDesc}>
-                    До 12 месяцев
+                    {t('header.subtitle_3_desc')}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
-                    до 30%
+                    {t('header.title_4_desc')}
                   </Typography>
                   <Typography className={classes.featureDesc}>
-                    Кешбэк
+                    {t('header.subtitle_4_desc')}
                   </Typography>
                 </Grid>
               </Grid>
@@ -224,7 +257,7 @@ const Header = (props: any) => {
                 variant="contained"
                 className={classes.buttonOrderCard}
               >
-                Заказать карту
+                {t('header.button_main')}
               </Button>
             </Grid>
           </Grid>

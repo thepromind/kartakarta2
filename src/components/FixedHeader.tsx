@@ -3,6 +3,8 @@ import { Grid, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Link, animateScroll as scroll } from "react-scroll";
 import ReactGA from "react-ga";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -138,6 +140,10 @@ const FixedHeader = (props: any) => {
     props.scrollToOrder();
   };
 
+  const handleLangChange = (lang: any) => {
+    props.changeLang(lang)
+  }
+
   return (
     <Grid
       container
@@ -146,11 +152,11 @@ const FixedHeader = (props: any) => {
       alignItems="center"
       className={hide ? classes.hide : classes.header}
     >
-      <Grid item xl={6} lg={6} md={6} sm={4} xs={4}>
+      <Grid item xl={6} lg={6} md={6} sm={4} xs={3}>
         <img src="green-logo.svg" className={classes.logo} />
         <img src="logo-bcc-small.svg" className={classes.small} />
       </Grid>
-      <Grid item xl={6} lg={6} md={6} sm={8} xs={8}>
+      <Grid item xl={6} lg={6} md={6} sm={8} xs={9}>
         <Grid
           justify="flex-end"
           alignContent="center"
@@ -159,16 +165,34 @@ const FixedHeader = (props: any) => {
         >
           <Grid
             item
+            xl={2}
+            lg={2}
+            md={2}
+            sm={2}
+            xs={2}
+            className={classes.smallcard}
+          >
+            <Select
+              value={props.lang}
+              onChange={(e: any) => handleLangChange(e.target.value)}
+            >
+              <MenuItem value="ru">Рус</MenuItem>
+              <MenuItem value="kz">Каз</MenuItem>
+            </Select>
+          </Grid>
+          <Grid
+            item
             xl={3}
             lg={3}
             md={4}
-            sm={4}
-            xs={4}
+            sm={3}
+            xs={3}
             className={classes.smallcard}
           >
             <img src="icon_card_small.svg" />
+
           </Grid>
-          <Grid item xl={3} lg={3} md={6} sm={6} xs={6}>
+          <Grid item xl={3} lg={3} md={6} sm={4} xs={4}>
             <Link smooth={true} to="order">
               <Button
                 variant="contained"

@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { Grid, Typography } from "@material-ui/core";
 import {
   makeStyles,
@@ -17,6 +16,7 @@ import ReactGA from "react-ga";
 import api from "../api/Api";
 import MaskedInput from "react-maskedinput";
 import ym from "react-yandex-metrika";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -181,20 +181,6 @@ const CardOrder = (props: any) => {
     });
 
     if (phoneNumber && setPhoneNumber) {
-      axios.post(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
-        TELEPHONE: phoneNumber,
-        NAME: fio,
-        SYSTEM_TITLE: "#картакарта",
-        SYSTEM_POST_EVENT: "handleSubmit",
-        SYSTEM_LINK: "https://www.bcc.kz/kartakarta",
-        SYSTEM_IBLOCK_ID: 143,
-        SYSTEM_NAME_ELEMENT: "NAME",
-        SYSTEM_STATUS: "2877182",
-        SYSTEM_LID: "S1",
-        BCC_KEY: "1v5df35v",
-
-      })
-        .then(r => r.data);
       api.card
         .order({ fio, phoneNumber })
         .then(m => {
@@ -208,6 +194,7 @@ const CardOrder = (props: any) => {
   };
 
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const theme = useTheme();
   const isXS = useMediaQuery(theme.breakpoints.down("sm"));
@@ -226,7 +213,7 @@ const CardOrder = (props: any) => {
     >
       <Paper elevation={0} className={classes.paper}>
         <Typography className={classes.box}>
-          Заполните заявку <br />и получите #картакарта
+          {t('block_6.title_main')} <br />{t('block_6.title_main_2')}
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form}>
           <TextField
@@ -235,7 +222,7 @@ const CardOrder = (props: any) => {
             margin="normal"
             fullWidth
             id="name"
-            label="Имя"
+            label={t('block_6.name_main')}
             name="name"
             value={fio}
             onChange={(e: any) => setFio(e.target.value)}
@@ -248,7 +235,7 @@ const CardOrder = (props: any) => {
             name="phone"
             value={phoneNumber}
             onChange={(e: any) => setPhoneNumber(e.target.value)}
-            label="Номер телефона"
+            label={t('block_6.phone_main')}
             id="phone"
             InputProps={{
               inputComponent: TextMaskCustom as any
@@ -266,7 +253,7 @@ const CardOrder = (props: any) => {
             }
             label={
               <Typography className={classes.checkBoxLabel}>
-                Я согласен(а) на сбор и обработку персональных данных
+                {t('block_6.checkbox_desc')}
               </Typography>
             }
           />
@@ -289,7 +276,7 @@ const CardOrder = (props: any) => {
                 </Grid>
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.garant}>
-                    Мы гарантируем безопасность и сохранность ваших данных
+                    {t('block_6.subtitle_desc')}
                   </Typography>
                 </Grid>
               </Grid>
@@ -302,7 +289,7 @@ const CardOrder = (props: any) => {
                 className={classes.submit}
                 disabled={!isValid()}
               >
-                Подать заявку
+                {t('block_6.button_main')}
               </Button>
             </Grid>
           </Grid>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Header,
   BestCard,
@@ -9,16 +9,29 @@ import {
   MobileBanking,
   AdditionalInfo,
   GoodAnyTimeWhere,
+  Partners,
   Footer,
   FixedHeader
 } from "./components";
+import { useTranslation } from 'react-i18next';
 
 import { YMInitializer } from "react-yandex-metrika";
 import SnackBarBottom from "./components/SnackBar";
 import * as Scroll from "react-scroll";
 
 function App() {
+  const { t, i18n } = useTranslation();
   const orderRef: any = React.useRef(null);
+  const [lang, setLang] = React.useState(i18n.language ? i18n.language : 'ru');
+
+  // useEffect(() => {
+  //   i18n.changeLanguage('ru');
+  // })
+
+  const handleLangChange = (lang: string) => {
+    setLang(lang);
+    i18n.changeLanguage(lang);
+  }
 
   const scrollToOrderRef = (flag: boolean) =>
     Scroll.animateScroll.scrollTo(
@@ -38,10 +51,9 @@ function App() {
           webvisor: true,
           trackHash: true
         }}
-        version="2"
       />
-      <Header scrollToOrder={scrollToOrderRef} />
-      <FixedHeader scrollToOrder={scrollToOrderRef} />
+      <Header lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
+      <FixedHeader lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
       <BestCard />
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />
@@ -50,6 +62,7 @@ function App() {
       <MobileBanking />
       <AdditionalInfo />
       <HelpYou />
+      <Partners />
       <Footer />
       <SnackBarBottom open={isSend} close={() => setSend(false)} />
     </div>

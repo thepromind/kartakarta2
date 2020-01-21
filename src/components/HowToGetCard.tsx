@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -86,13 +87,14 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const HowToGetCard = (props: any) => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   return (
     <Grid container className={classes.mainRoot}>
       <Grid container className={classes.root}>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Typography className={classes.mainTitle}>
-            Как получить карту
+            {t('block_5.title_main')}
           </Typography>
         </Grid>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -102,10 +104,10 @@ const HowToGetCard = (props: any) => {
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>1</Typography>
                   <Typography className={classes.title}>
-                    Подайте заявку
+                    {t('block_5.title_1_desc')}
                   </Typography>
                   <Typography className={classes.description}>
-                    Обратитесь за #картакарта в ближайшее отделение Банка
+                    {t('block_5.subtitle_1_desc')}
                   </Typography>
                 </Grid>
                 <Grid
@@ -126,10 +128,10 @@ const HowToGetCard = (props: any) => {
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>2</Typography>
                   <Typography className={classes.title}>
-                    Узнайте решение
+                    {t('block_5.title_2_desc')}
                   </Typography>
                   <Typography className={classes.description}>
-                    Мы принимаем решение за 3 минуты
+                    {t('block_5.subtitle_2_desc')}
                   </Typography>
                 </Grid>
                 <Grid
@@ -150,10 +152,10 @@ const HowToGetCard = (props: any) => {
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.step}>3</Typography>
                   <Typography className={classes.title}>
-                    Получите карту
+                    {t('block_5.title_2_desc_1')}
                   </Typography>
                   <Typography className={classes.description}>
-                    Сразу получите карту и начните пользоваться
+                    {t('block_5.subtitle_2_desc_1')}
                   </Typography>
                 </Grid>
               </Grid>

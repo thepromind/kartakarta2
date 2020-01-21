@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -122,13 +123,14 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const BestCard = (props: any) => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   return (
     <Grid container className={classes.root} id="secondHeader">
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Typography className={classes.mainTitle}>Лучшая карта</Typography>
+        <Typography className={classes.mainTitle}>{t('block_2.title_main')}</Typography>
         <Typography className={classes.mainDescription}>
-          во всех смыслах этого слова
+          {t('block_2.subtitle_desc')}
         </Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -144,12 +146,10 @@ const BestCard = (props: any) => {
               </Grid>
               <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                 <Typography className={classes.title}>
-                  Рассрочка и кредитка в одном пластике
+                  {t('block_2.title_2_desc')}
                 </Typography>
                 <Typography className={classes.description}>
-                  Банк дает вам сумму до 3 000 000 ₸, <br />
-                  Вы решаете, как оплачивать покупки: одним платежом или в
-                  рассрочку
+                  {t('block_2.subtitle_2_desc')}<br />{t('block_2.subtitle_2_1_desc')}
                 </Typography>
               </Grid>
             </Grid>
@@ -164,14 +164,13 @@ const BestCard = (props: any) => {
                 />
               </Grid>
               <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
-                <Typography className={classes.title}>Кешбэк до 30%</Typography>
+                <Typography className={classes.title}>{t('block_2.title_3_desc')}</Typography>
                 <ul className={classes.ul}>
                   <li className={classes.li}>
-                    1% с любой личной покупки картой (2% при вкладе
-                    Рахмет/Рахмет+ от 1 000 000 ₸)
+                    {t('block_2.subtitle_3_desc')}
                   </li>
-                  <li className={classes.li}>до 10% в любимых категориях</li>
-                  <li className={classes.li}>до 30% у наших партнеров</li>
+                  <li className={classes.li}>{t('block_2.subtitle_3_1_desc')}</li>
+                  <li className={classes.li}>{t('block_2.subtitle_3_2_desc')}</li>
                 </ul>
               </Grid>
             </Grid>
@@ -187,15 +186,14 @@ const BestCard = (props: any) => {
               </Grid>
               <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                 <Typography className={classes.title}>
-                  Проценты? Не, не слышали
+                  {t('block_2.title_4_desc')}
                 </Typography>
                 <ul className={classes.ul}>
                   <li className={classes.li}>
-                    Тратьте и возвращайте деньги, выданные Банком, без процентов
-                    до 55 дней
+                    {t('block_2.subtitle_4_desc')}
                   </li>
                   <li className={classes.li}>
-                    Покупайте у наших партнеров в рассрочку без переплат
+                    {t('block_2.subtitle_4_1_desc')}
                   </li>
                 </ul>
               </Grid>
@@ -207,13 +205,12 @@ const BestCard = (props: any) => {
                 <img src="about_free.svg" className={classes.icon} alt="free" />
               </Grid>
               <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
-                <Typography className={classes.title}>Бесплатно</Typography>
+                <Typography className={classes.title}>{t('block_2.title_5_desc')}</Typography>
                 <ul className={classes.ul}>
-                  <li className={classes.li}>Выпуск и обслуживание карты</li>
-                  <li className={classes.li}>СМС уведомления</li>
+                  <li className={classes.li}>{t('block_2.subtitle_5_desc')}</li>
+                  <li className={classes.li}>{t('block_2.subtitle_5_1_desc')}</li>
                   <li className={classes.li}>
-                    Снятие личных средств до 300 000 ₸ в мес. в любом банкомате
-                    РК
+                    {t('block_2.subtitle_5_1_desc_1')}
                   </li>
                 </ul>
               </Grid>

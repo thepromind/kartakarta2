@@ -17,7 +17,7 @@ import {
 } from "@material-ui/icons";
 import NumberFormat from "react-number-format";
 import ReactGA from "react-ga";
-
+import { useTranslation } from 'react-i18next';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
@@ -365,25 +365,11 @@ interface InstallmentModel {
   beginMonth: number;
 }
 
-const monthArr = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноябрь",
-  "Декабрь",
-  "Январь"
-];
+
 
 const Installment = (props: any) => {
   const classes = useStyles({});
-
+  const { t } = useTranslation();
   const [isShowNote, setShowNote] = React.useState(false);
 
   const toggleNote = (val: boolean) => {
@@ -395,10 +381,26 @@ const Installment = (props: any) => {
     });
   };
 
+  const monthArr = [
+    `${t('block_3.tableMonth_1_tab_1')}`,
+    `${t('block_3.tableMonth_2_tab_1')}`,
+    `${t('block_3.tableMonth_3_tab_1')}`,
+    `${t('block_3.tableMonth_4_tab_1')}`,
+    `${t('block_3.tableMonth_5_tab_1')}`,
+    `${t('block_3.tableMonth_6_tab_1')}`,
+    `${t('block_3.tableMonth_7_tab_1')}`,
+    `${t('block_3.tableMonth_8_tab_1')}`,
+    `${t('block_3.tableMonth_9_tab_1')}`,
+    `${t('block_3.tableMonth_10_tab_1')}`,
+    `${t('block_3.tableMonth_11_tab_1')}`,
+    `${t('block_3.tableMonth_12_tab_1')}`,
+    `${t('block_3.tableMonth_1_tab_1')}`,
+  ];
+
   const items: InstallmentModel[] = [
     {
       img: "installment_dubai.svg",
-      name: "Тур в Дубай",
+      name: `${t('block_3.tableInfo_1_tab_1')}`,
       price: 180000,
       installment: 12,
       beginMonth: 1
@@ -412,7 +414,7 @@ const Installment = (props: any) => {
     },
     {
       img: "installment_ring.svg",
-      name: "Кольца",
+      name: `${t('block_3.tableInfo_2_tab_1')}`,
       price: 60000,
       installment: 3,
       beginMonth: 3
@@ -457,10 +459,10 @@ const Installment = (props: any) => {
         className={classes.container}
       >
         <Typography className={classes.subTitle}>
-          Умная рассрочка до 12 месяцев
+          {t('block_3.title_2_tab_1')}
         </Typography>
         <Typography className={classes.subTitleDesc}>
-          Управление в StarBanking 24/7
+          {t('block_3.subtitle_2_tab_1')}
         </Typography>
       </Grid>
       <Grid
@@ -483,16 +485,16 @@ const Installment = (props: any) => {
             className={classes.tableBlockLeft}
           >
             <Typography className={classes.tableBlockLeftTitle}>
-              В сети партнеров Банка
+              {t('block_3.tableTitle_tab_1')}
             </Typography>
             <Typography className={classes.tableBlockLeftDesc}>
-              3, 6, или 12 месяцев
+              {t('block_3.tableSubtitle_2_tab_1')}
             </Typography>
             <Typography>
               <span className={classes.tableBlockLeftCommision}>0%</span>
               &nbsp;&nbsp;
               <span className={classes.tableBlockLeftCommisionText}>
-                комиссия
+                {t('block_3.tableSubtitle_3_tab_1')}
               </span>
             </Typography>
           </Grid>
@@ -604,13 +606,12 @@ const Installment = (props: any) => {
                 <Grid container direction="row">
                   <Grid item sm={false} xs={false}>
                     <EmojiObjects className={classes.noteIcons} />
-                    <span className={classes.noteBold}>Подсказка:</span>
+                    <span className={classes.noteBold}>{t('block_3.collapseTitle_tab_1')}</span>
                     &nbsp;&nbsp;
                   </Grid>
                   <Grid item sm={true} xs={true}>
                     <span className={classes.note}>
-                      Активируйте режим рассрочки в StarBanking и покупайте в
-                      рассрочку
+                      {t('block_3.collapseSubtitle_2_tab_1')}
                     </span>
                   </Grid>
                 </Grid>
@@ -626,11 +627,11 @@ const Installment = (props: any) => {
               >
                 {isShowNote ? (
                   <div className={classes.noteShow}>
-                    Скрыть <ArrowDropUp className={classes.noteIcons} />
+                    {t('block_3.collapseButton_3_tab_1')} <ArrowDropUp className={classes.noteIcons} />
                   </div>
                 ) : (
                     <div className={classes.noteShow}>
-                      Раскрыть <ArrowDropDown className={classes.noteIcons} />
+                      {t('block_3.collapseButton_4_tab_1')} <ArrowDropDown className={classes.noteIcons} />
                     </div>
                   )}
               </Grid>
@@ -649,28 +650,19 @@ const Installment = (props: any) => {
               <Grid container>
                 <Grid item xl={7} lg={7} md={7} sm={12} xs={12}>
                   <Typography className={classes.noteBold}>
-                    Режим рассрочки
+                    {t('block_3.collapseShowTitle_tab_1')}
                   </Typography>
                   <Typography className={classes.noteDetail}>
-                    1. Выберите #картакарта из списка ваших доступных счетов.
+                    {t('block_3.collapseShowSubtitle_1_tab_1')}
                   </Typography>
                   <Typography className={classes.noteDetail}>
-                    2. Нажмите на кнопку “Рассрочка”. В обычном состоянии режим
-                    рассрочки выключен, что и показывает статус “Off”.
+                    {t('block_3.collapseShowSubtitle_2_tab_1')}
                   </Typography>
                   <Typography className={classes.noteDetail}>
-                    3. Включите режим рассрочки, сдвинув ползунок направо.
+                    {t('block_3.collapseShowSubtitle_3_tab_1')}
                   </Typography>
                   <Typography className={classes.noteDetail}>
-                    4. С включенным режимом рассрочки все ваши покупки по
-                    #картакарта от 5 000 ₸ за счет кредитного лимита будут
-                    делиться на равные части без комиссий в сети{" "}
-                    <span
-                      className={classes.spanPartners}
-                      onClick={() => onClickPartners()}
-                    >
-                      партнеров
-                    </span>
+                    {t('block_3.collapseShowSubtitle_4_tab_1')}
                   </Typography>
                   <Typography className={classes.noteDetail}>
                     <Button
@@ -678,7 +670,7 @@ const Installment = (props: any) => {
                       className={classes.noteDetailButton}
                       onClick={() => onClickOrderButton()}
                     >
-                      Оформить рассрочку
+                      {t('block_3.button_main')}
                     </Button>
                   </Typography>
                 </Grid>
@@ -707,7 +699,7 @@ const Installment = (props: any) => {
               <Grid item>
                 <Error className={classes.noteIcons} />
                 <span className={classes.note}>
-                  Вне сети партнеров Банка под 1% на 3 месяца
+                  {t('block_3.collapseShowInfo_tab_1')}
                 </span>
               </Grid>
             </Grid>
