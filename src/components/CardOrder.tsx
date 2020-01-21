@@ -16,6 +16,7 @@ import ReactGA from "react-ga";
 import api from "../api/Api";
 import MaskedInput from "react-maskedinput";
 import ym from "react-yandex-metrika";
+import { getByDisplayValue } from "@testing-library/react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -180,7 +181,6 @@ const CardOrder = (props: any) => {
     });
 
     const time: any = new Date();
-
     let itemsArrayHelp: any = [];
     itemsArrayHelp.push(["11111111111", time]);
 
@@ -188,31 +188,60 @@ const CardOrder = (props: any) => {
       ? JSON.parse(localStorage.getItem("items")!)
       : [itemsArrayHelp];
 
-    const data = JSON.parse(localStorage.getItem("items")!);
-    console.log(itemsArray);
-
     if (phoneNumber && setPhoneNumber) {
       for (let i = itemsArray.length - 1; i >= 0; i--) {
         if (itemsArray[i][0] == phoneNumber) {
-          if (time - Date.parse(itemsArray[i][1]) < 1000 * 60 * 15) {
+          if (
+            Date.parse(time) - Date.parse(itemsArray[i][1]) <
+            1000 * 60 * 15
+          ) {
             props.snackUp(
-              "Мы уже получили Вашу заявку. Ждите звонка или можете попробовать через 15 минут."
+              "Мы уже получили Вашу заявку и скоро Вам перезвоним."
             );
             return;
           }
         }
       }
-
+      itemsArray.push([phoneNumber, time]);
+      localStorage.setItem("items", JSON.stringify(itemsArray));
       api.card
         .order({ fio, phoneNumber })
         .then(m => {
           setFio("");
           setPhoneNumber("");
-          itemsArray.push([phoneNumber, time]);
-          localStorage.setItem("items", JSON.stringify(itemsArray));
-          props.snackUp(
-            "Заявка успешно отправлена. Ваш менеджер перезвонит Вам в течение 15 минут."
-          );
+
+          if (time.getHours() > 21 || time.getHours() < 9) {
+            if (time.getDay() >= 1 && time.getDay() <= 4) {
+              props.snackUp(
+                "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+              );
+            }
+          } else if (
+            time.getDay() == 5 &&
+            (time.getHours() > 21 || time.getHours() < 11)
+          ) {
+            props.snackUp(
+              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+            );
+          } else if (
+            time.getDay() == 6 &&
+            (time.getHours() >= 20 || time.getHours() < 11)
+          ) {
+            props.snackUp(
+              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+            );
+          } else if (
+            time.getDay() == 0 &&
+            (time.getHours() >= 20 || time.getHours() < 9)
+          ) {
+            props.snackUp(
+              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+            );
+          } else {
+            props.snackUp(
+              "Спасибо, заявка принята. Мы свяжемся с Вами в течение 15 минут."
+            );
+          }
         })
         .catch(e => console.warn(e));
     }
@@ -257,11 +286,11 @@ const CardOrder = (props: any) => {
             variant="outlined"
             margin="normal"
             fullWidth
+            id="phone"
+            label="Номер телефона"
             name="phone"
             value={phoneNumber}
             onChange={(e: any) => setPhoneNumber(e.target.value)}
-            label="Номер телефона"
-            id="phone"
             InputProps={{
               inputComponent: TextMaskCustom as any
             }}
