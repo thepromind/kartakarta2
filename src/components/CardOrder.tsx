@@ -210,15 +210,15 @@ const CardOrder = (props: any) => {
           setFio("");
           setPhoneNumber("");
 
-          if (time.getHours() > 21 || time.getHours() < 9) {
-            if (time.getDay() >= 1 && time.getDay() <= 4) {
+          if (time.getDay() >= 1 && time.getDay() <= 4) {
+            if (time.getHours() >= 21 || time.getHours() < 9) {
               props.snackUp(
                 "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
               );
             }
           } else if (
             time.getDay() == 5 &&
-            (time.getHours() > 21 || time.getHours() < 11)
+            (time.getHours() >= 21 || time.getHours() < 11)
           ) {
             props.snackUp(
               "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
