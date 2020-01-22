@@ -17,6 +17,7 @@ import api from "../api/Api";
 import MaskedInput from "react-maskedinput";
 import ym from "react-yandex-metrika";
 import { getByDisplayValue } from "@testing-library/react";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -237,6 +238,7 @@ const CardOrder = (props: any) => {
   };
 
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const theme = useTheme();
   const isXS = useMediaQuery(theme.breakpoints.down("sm"));
@@ -255,7 +257,8 @@ const CardOrder = (props: any) => {
     >
       <Paper elevation={0} className={classes.paper}>
         <Typography className={classes.box}>
-          Заполните заявку <br />и получите #картакарта
+          {t("block_6.title_main")} <br />
+          {t("block_6.title_main_2")}
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form}>
           <TextField
@@ -264,7 +267,7 @@ const CardOrder = (props: any) => {
             margin="normal"
             fullWidth
             id="name"
-            label="Имя"
+            label={t("block_6.name_main")}
             name="name"
             value={fio}
             onChange={(e: any) => setFio(e.target.value)}
@@ -279,6 +282,8 @@ const CardOrder = (props: any) => {
             name="phone"
             value={phoneNumber}
             onChange={(e: any) => setPhoneNumber(e.target.value)}
+            label={t("block_6.phone_main")}
+            id="phone"
             InputProps={{
               inputComponent: TextMaskCustom as any
             }}
@@ -295,7 +300,7 @@ const CardOrder = (props: any) => {
             }
             label={
               <Typography className={classes.checkBoxLabel}>
-                Я согласен(а) на сбор и обработку персональных данных
+                {t("block_6.checkbox_desc")}
               </Typography>
             }
           />
@@ -318,7 +323,7 @@ const CardOrder = (props: any) => {
                 </Grid>
                 <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
                   <Typography className={classes.garant}>
-                    Мы гарантируем безопасность и сохранность ваших данных
+                    {t("block_6.subtitle_desc")}
                   </Typography>
                 </Grid>
               </Grid>
@@ -331,7 +336,7 @@ const CardOrder = (props: any) => {
                 className={classes.submit}
                 disabled={!isValid()}
               >
-                Подать заявку
+                {t("block_6.button_main")}
               </Button>
             </Grid>
           </Grid>

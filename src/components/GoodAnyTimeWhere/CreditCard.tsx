@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { EmojiObjects } from "@material-ui/icons";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -91,6 +92,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const CreditCard = () => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   return (
     <Grid container>
@@ -104,10 +106,10 @@ const CreditCard = () => {
         className={classes.container}
       >
         <Typography className={classes.subTitle}>
-          Как правильно пользоваться кредитным лимитом и не платить проценты
+          {t('block_3.title_2_tab_2')}
         </Typography>
         <Typography className={classes.subTitleDesc}>
-          Управление в StarBanking 24/7
+          {t('block_3.subtitle_2_tab_2')}
         </Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -137,12 +139,10 @@ const CreditCard = () => {
           <Grid item sm={true} xs={true}>
             <Grid container alignItems="flex-start">
               <Typography className={classes.note}>
-                <b>1.</b>&nbsp; 1 сентября вы совершаете покупку на сумму 5 000
-                тенге за счет кредитного лимита
+                <b>1.</b>&nbsp; {t('block_3.collapseShowInfo_1_tab_2')}
               </Typography>
               <Typography className={classes.note}>
-                <b>2.</b>&nbsp; Погасив 5 000 тенге до 25 октября, вы не платите
-                никаких процентов за пользование кредитным лимитом
+                <b>2.</b>&nbsp; {t('block_3.collapseShowInfo_2_tab_2')}
               </Typography>
             </Grid>
           </Grid>

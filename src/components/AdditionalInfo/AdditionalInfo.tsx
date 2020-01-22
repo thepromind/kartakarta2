@@ -13,6 +13,7 @@ import Tab from "./Tab";
 import { rootSmXl, paddingDownSm } from "../helper/DefaultStyle";
 import ExpansionPanel from "./ExpansionPanel";
 import ReactGA from "react-ga";
+import { useTranslation } from 'react-i18next';
 
 const useStylesTarifs = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,7 +38,8 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
         textDecoration: "none",
         display: "flex",
         alignItems: "center",
-        margin: "4px 0"
+        margin: "4px 0",
+        whiteSpace: "nowrap"
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -69,26 +71,26 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
 
 const Tarifs = () => {
   const classes = useStylesTarifs({});
+  const { t } = useTranslation();
 
   const rows = [
-    { code: "Выпуск и обслуживание карты", value: "бесплатно" },
-    { code: "Перевыпуск карты", value: "бесплатно" },
-    { code: "СМС-уведомления", value: "бесплатно" },
-    { code: "Пополнение", value: "бесплатно" },
-    { code: "Покупки без рассрочки", value: "бесплатно" },
+    { code: `${t('block_8.title_1_tab_2')}`, value: `${t('block_8.free_main')}` },
+    { code: `${t('block_8.title_2_tab_2')}`, value: `${t('block_8.free_main')}` },
+    { code: `${t('block_8.title_3_tab_2')}`, value: `${t('block_8.free_main')}` },
+    { code: `${t('block_8.title_4_tab_2')}`, value: `${t('block_8.free_main')}` },
+    { code: `${t('block_8.title_5_tab_2')}`, value: `${t('block_8.free_main')}` },
     {
-      code: "Покупки в рассрочку",
+      code: `${t('block_8.title_6_tab_2')}`,
       value: (
         <Typography className={classes.td}>
-          бесплатно - у партнеров Банка <br /> 1% в мес. - вне сети партнеров
-          Банка
+          {t('block_8.subtitle_6_tab_2')} <br /> {t('block_8.subtitle_6_2_tab_2')}
         </Typography>
       )
     },
     {
-      code: "Снятие наличных",
+      code: `${t('block_8.title_7_tab_2')}`,
       value:
-        "бесплатно - личные средства до 300 000 Т в мес. в любом банкомате РК"
+        `${t('block_8.subtitle_6_tab_2_1')}`
     }
   ];
 
@@ -109,19 +111,19 @@ const Tarifs = () => {
                   <Typography>
                     <a href="tarifs_kz.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы(каз.яз)
+                      &nbsp; {t('block_8.title_10_tab_2')}
                     </a>
                   </Typography>
                   <Typography>
                     <a href="tarifs_ru.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы(рус.яз)
+                      &nbsp; {t('block_8.title_11_tab_2')}
                     </a>
                   </Typography>
                   <Typography>
                     <a href="tarifs_en.pdf" className={classes.a}>
                       <img src="pdf.svg" alt="pdf" />
-                      &nbsp; Тарифы(англ.яз)
+                      &nbsp; {t('block_8.title_12_tab_2')}
                     </a>
                   </Typography>
                 </div>
@@ -136,24 +138,25 @@ const Tarifs = () => {
 
 const Conditions = () => {
   const classes = useStylesTarifs({});
+  const { t } = useTranslation();
 
   const rows = [
-    { code: "Кредитный лимит", value: "до 3 000 000 ₸" },
-    { code: "Льготный период", value: "до 55 дней" },
+    { code: `${t('block_8.title_1_tab_1')}`, value: `${t('block_8.subtitle_1_tab_1')}` },
+    { code: `${t('block_8.title_2_tab_1')}`, value: `${t('block_8.subtitle_2_tab_1')}` },
     {
-      code: "Процентная ставка (без рассрочки)",
+      code: `${t('block_8.title_3_tab_1')}`,
       value: (
         <Typography className={classes.td}>
-          <b>0% в льготный период</b>
+          <b>{t('block_8.subtitle_3_tab_1')}</b>
           <br />
-          22,99% - для участников зарплатного проекта (ГЭСВ до 26%)
+          {t('block_8.subtitle_3_1_tab_1')}
           <br />
-          24,99% - для других клиентов (ГЭСВ до 29%)
+          {t('block_8.subtitle_3_2_tab_1')}
         </Typography>
       )
     },
-    { code: "Процентная ставка (в рассрочку)", value: "0%" },
-    { code: "Кешбэк", value: "до 30%" }
+    { code: `${t('block_8.title_4_tab_1')}`, value: "0%" },
+    { code: `${t('block_8.title_5_tab_1')}`, value: `${t('block_8.subtitle_5_tab_1')}` }
   ];
 
   return (
@@ -174,6 +177,7 @@ const Conditions = () => {
 
 const Documents = () => {
   const classes = useStylesTarifs({});
+  const { t } = useTranslation();
 
   const rows = ["Программа рассрочки.pdf"];
 
@@ -181,22 +185,12 @@ const Documents = () => {
     <Box width={0.7}>
       <Table>
         <TableBody>
-            <TableRow>
-              <TableCell colSpan={2} className={classes.td}>
-                  <Typography>
-                    <a href="cashback_ru.pdf" className={classes.a}>
-                    <img src="pdf.svg" alt="pdf" />
-                    &nbsp; Кешбэк программа(рус.яз)
-                    </a>
-                  </Typography>
-              </TableCell>
-            </TableRow>
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>
-                <a href="#!" className={classes.a}>
+                <a href="Cashback_program_ru.pdf" className={classes.a}>
                   <img src="pdf.svg" alt="pdf" />
-                  &nbsp; Кешбэк программа(каз.яз)
+                  &nbsp; {t('block_8.title_13_tab_4')}
                 </a>
               </Typography>
             </TableCell>
@@ -204,13 +198,25 @@ const Documents = () => {
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>
-                <a href="#!" className={classes.a}>
+                <a href="Cashback_program_kz" className={classes.a}>
                   <img src="pdf.svg" alt="pdf" />
-                  &nbsp; Программа рассрочки(рус.яз)
+                  &nbsp; {t('block_8.title_14_tab_4')}
                 </a>
               </Typography>
             </TableCell>
           </TableRow>
+
+          {/* <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="#!" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; {t('block_8.title_15_tab_4')}
+                </a>
+              </Typography>
+            </TableCell>
+          </TableRow>*/}
+
         </TableBody>
       </Table>
     </Box>
@@ -244,6 +250,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AdditionalInfo = () => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const swipeTab = (index: number) => {
     let actionName = "Additional_Conditions";
@@ -265,16 +272,16 @@ const AdditionalInfo = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Typography className={classes.title}>Дополнительно</Typography>
+        <Typography className={classes.title}>{t('block_8.title_main')}</Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
         <Tab
           onHandleChanged={(i: number) => swipeTab(i)}
           menuTitle={[
-            "Условия",
-            "Тарифы",
-            "Часто задаваемые вопросы",
-            "Документы"
+            `${t('block_8.button_1_tab_1')}`,
+            `${t('block_8.button_2_tab_2')}`,
+            `${t('block_8.button_3_tab_3')}`,
+            `${t('block_8.button_4_tab_4')}`
           ]}
           pans={[<Conditions />, <Tarifs />, <ExpansionPanel />, <Documents />]}
         />

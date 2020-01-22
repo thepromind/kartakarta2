@@ -4,7 +4,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "../helper/DefaultStyle";
 import Installment from "./Installment";
 import CreditCard from "./CreditCard";
-
+import { useTranslation } from 'react-i18next';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
@@ -109,6 +109,7 @@ enum CardType {
 
 const GoodAnyTimeWhere = (props: any) => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const [cardType, setCardType] = React.useState<CardType>(
     CardType.Installment
@@ -119,7 +120,7 @@ const GoodAnyTimeWhere = (props: any) => {
       <Grid container className={classes.root} spacing={2}>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Typography className={classes.title}>
-            Хороша всегда и везде
+            {t('block_3.title_main')}
           </Typography>
         </Grid>
         <Grid
@@ -141,7 +142,7 @@ const GoodAnyTimeWhere = (props: any) => {
                     : classes.tabButton
                 }
               >
-                Умная рассрочка
+                {t('block_3.button_1_tab_1')}
               </Button>
             </Grid>
             <Grid item>
@@ -153,7 +154,7 @@ const GoodAnyTimeWhere = (props: any) => {
                     : classes.tabButton
                 }
               >
-                Кредитная карта
+                {t('block_3.button_2_tab_2')}
               </Button>
             </Grid>
           </Grid>
@@ -162,8 +163,8 @@ const GoodAnyTimeWhere = (props: any) => {
           {cardType === CardType.Installment ? (
             <Installment {...props} />
           ) : (
-            <CreditCard />
-          )}
+              <CreditCard />
+            )}
         </Grid>
       </Grid>
     </Grid>

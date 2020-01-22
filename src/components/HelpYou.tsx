@@ -4,6 +4,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm } from "./helper/DefaultStyle";
 import { PhoneAndroid, Call } from "@material-ui/icons";
 import ReactGA from "react-ga";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -114,6 +115,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const HelpYou = () => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const onClickCall505 = () => {
     ReactGA.event({
@@ -144,7 +146,7 @@ const HelpYou = () => {
             <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
               <Typography className={classes.freeCall}>505</Typography>
               <Typography className={classes.ourSpec}>
-                Бесплатно с мобильного
+                {t('block_9.phone_main')}
               </Typography>
             </Grid>
           </Grid>
