@@ -3,6 +3,7 @@ import { Grid, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Link, animateScroll as scroll } from "react-scroll";
 import ReactGA from "react-ga";
+import { useTranslation } from 'react-i18next';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -131,6 +132,7 @@ const FixedHeader = (props: any) => {
   });
 
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const onClickOrder = () => {
     ReactGA.event({
@@ -183,7 +185,7 @@ const FixedHeader = (props: any) => {
                 className={classes.buttonOrderCard}
                 onClick={() => onClickOrder()}
               >
-                Заказать карту
+                {t('header.button_main')}
               </Button>
             </Link>
           </Grid>
