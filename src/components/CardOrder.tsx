@@ -196,9 +196,7 @@ const CardOrder = (props: any) => {
             Date.parse(time) - Date.parse(itemsArray[i][1]) <
             1000 * 60 * 15
           ) {
-            props.snackUp(
-              "Мы уже получили Вашу заявку и скоро Вам перезвоним."
-            );
+            props.snackUp(t("block_9.snack_bar_repeat"));
             return;
           }
         }
@@ -216,20 +214,14 @@ const CardOrder = (props: any) => {
             time.getDay() <= 5 &&
             (time.getHours() >= 9 || time.getHours() < 21)
           ) {
-            props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в течение 15 минут."
-            );
+            props.snackUp(t("block_9.snack_bar_week"));
           } else if (
             (time.getDay() == 6 || time.getDay() == 0) &&
             (time.getHours() >= 11 || time.getHours() < 20)
           ) {
-            props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в течение 15 минут."
-            );
+            props.snackUp(t("block_9.snack_bar_week"));
           } else {
-            props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
-            );
+            props.snackUp(t("block_9.snack_bar_week_end"));
           }
         })
         .catch(e => console.warn(e));
@@ -278,12 +270,10 @@ const CardOrder = (props: any) => {
             margin="normal"
             fullWidth
             id="phone"
-            label="Номер телефона"
             name="phone"
             value={phoneNumber}
             onChange={(e: any) => setPhoneNumber(e.target.value)}
             label={t("block_6.phone_main")}
-            id="phone"
             InputProps={{
               inputComponent: TextMaskCustom as any
             }}
