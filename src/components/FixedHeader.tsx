@@ -163,23 +163,7 @@ const FixedHeader = (props: any) => {
           alignItems="center"
           container
         >
-          <Grid
-            item
-            xl={2}
-            lg={2}
-            md={2}
-            sm={2}
-            xs={2}
-            className={classes.smallcard}
-          >
-            <Select
-              value={props.lang}
-              onChange={(e: any) => handleLangChange(e.target.value)}
-            >
-              <MenuItem value="ru">Рус</MenuItem>
-              <MenuItem value="kz">Каз</MenuItem>
-            </Select>
-          </Grid>
+
           <Grid
             item
             xl={3}
