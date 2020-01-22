@@ -202,44 +202,32 @@ const CardOrder = (props: any) => {
           }
         }
       }
-      itemsArray.push([phoneNumber, time]);
-      localStorage.setItem("items", JSON.stringify(itemsArray));
       api.card
         .order({ fio, phoneNumber })
         .then(m => {
           setFio("");
           setPhoneNumber("");
+          itemsArray.push([phoneNumber, time]);
+          localStorage.setItem("items", JSON.stringify(itemsArray));
 
-          if (time.getDay() >= 1 && time.getDay() <= 4) {
-            if (time.getHours() >= 21 || time.getHours() < 9) {
-              props.snackUp(
-                "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
-              );
-            }
-          } else if (
-            time.getDay() == 5 &&
-            (time.getHours() >= 21 || time.getHours() < 11)
+          if (
+            time.getDay() >= 1 &&
+            time.getDay() <= 5 &&
+            (time.getHours() >= 9 || time.getHours() < 21)
           ) {
             props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+              "Спасибо, заявка принята. Мы перезвоним Вам в течение 15 минут."
             );
           } else if (
-            time.getDay() == 6 &&
-            (time.getHours() >= 20 || time.getHours() < 11)
+            (time.getDay() == 6 || time.getDay() == 0) &&
+            (time.getHours() >= 11 || time.getHours() < 20)
           ) {
             props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
-            );
-          } else if (
-            time.getDay() == 0 &&
-            (time.getHours() >= 20 || time.getHours() < 9)
-          ) {
-            props.snackUp(
-              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
+              "Спасибо, заявка принята. Мы перезвоним Вам в течение 15 минут."
             );
           } else {
             props.snackUp(
-              "Спасибо, заявка принята. Мы свяжемся с Вами в течение 15 минут."
+              "Спасибо, заявка принята. Мы перезвоним Вам в ближайшее рабочее время."
             );
           }
         })
