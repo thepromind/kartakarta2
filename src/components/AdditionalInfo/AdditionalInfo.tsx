@@ -38,7 +38,8 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
         textDecoration: "none",
         display: "flex",
         alignItems: "center",
-        margin: "4px 0"
+        margin: "4px 0",
+        whiteSpace: "nowrap"
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -187,7 +188,7 @@ const Documents = () => {
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>
-                <a href="cashback_ru.pdf" className={classes.a}>
+                <a href="Cashback_program_ru.pdf" className={classes.a}>
                   <img src="pdf.svg" alt="pdf" />
                   &nbsp; {t('block_8.title_13_tab_4')}
                 </a>
@@ -197,7 +198,7 @@ const Documents = () => {
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>
-                <a href="#!" className={classes.a}>
+                <a href="Cashback_program_kz" className={classes.a}>
                   <img src="pdf.svg" alt="pdf" />
                   &nbsp; {t('block_8.title_14_tab_4')}
                 </a>
