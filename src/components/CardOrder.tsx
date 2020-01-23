@@ -189,43 +189,44 @@ const CardOrder = (props: any) => {
       ? JSON.parse(localStorage.getItem("items")!)
       : [itemsArrayHelp];
 
-    if (phoneNumber && setPhoneNumber) {
-      for (let i = itemsArray.length - 1; i >= 0; i--) {
-        if (itemsArray[i][0] == phoneNumber) {
-          if (
-            Date.parse(time) - Date.parse(itemsArray[i][1]) <
-            1000 * 60 * 15
-          ) {
-            props.snackUp(t("block_9.snack_bar_repeat"));
-            return;
-          }
+    for (let i = itemsArray.length - 1; i >= 0; i--) {
+      if (itemsArray[i][0] === phoneNumber) {
+        if (Date.parse(time) - Date.parse(itemsArray[i][1]) < 1000 * 60 * 15) {
+          props.snackUp(t("block_9.snack_bar_repeat"));
+          return;
         }
       }
-      api.card
-        .order({ fio, phoneNumber })
-        .then(m => {
-          setFio("");
-          setPhoneNumber("");
-          itemsArray.push([phoneNumber, time]);
-          localStorage.setItem("items", JSON.stringify(itemsArray));
-
-          if (
-            time.getDay() >= 1 &&
-            time.getDay() <= 5 &&
-            (time.getHours() >= 9 || time.getHours() < 21)
-          ) {
-            props.snackUp(t("block_9.snack_bar_week"));
-          } else if (
-            (time.getDay() == 6 || time.getDay() == 0) &&
-            (time.getHours() >= 11 || time.getHours() < 20)
-          ) {
-            props.snackUp(t("block_9.snack_bar_week"));
-          } else {
-            props.snackUp(t("block_9.snack_bar_week_end"));
-          }
-        })
-        .catch(e => console.warn(e));
     }
+
+    itemsArray.push([phoneNumber, time]);
+    localStorage.setItem("items", JSON.stringify(itemsArray));
+
+    if (
+      time.getDay() >= 1 &&
+      time.getDay() <= 5 &&
+      (time.getHours() >= 9 || time.getHours() < 21)
+    ) {
+      props.snackUp(t("block_9.snack_bar_week"));
+    } else if (
+      (time.getDay() === 6 || time.getDay() === 0) &&
+      (time.getHours() >= 11 || time.getHours() < 20)
+    ) {
+      props.snackUp(t("block_9.snack_bar_week"));
+    } else {
+      props.snackUp(t("block_9.snack_bar_week_end"));
+    }
+
+    setTimeout(
+      () =>
+        api.card
+          .order({ fio, phoneNumber })
+          .then(m => {
+            setFio("");
+            setPhoneNumber("");
+          })
+          .catch(e => console.warn(e)),
+      2000
+    );
     ym("reachGoal", "send_mess");
   };
 
