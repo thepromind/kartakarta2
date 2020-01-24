@@ -7,6 +7,7 @@ import {
   useTheme
 } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -217,14 +218,31 @@ const CardOrder = (props: any) => {
     }
 
     setTimeout(
-      () =>
+      () => {
+        if (phoneNumber && setPhoneNumber) {
+          axios.post(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
+            TELEPHONE: phoneNumber,
+            NAME: fio,
+            SYSTEM_TITLE: "#картакарта",
+            SYSTEM_POST_EVENT: "handleSubmit",
+            SYSTEM_LINK: "https://www.bcc.kz/kartakarta",
+            SYSTEM_IBLOCK_ID: 143,
+            SYSTEM_NAME_ELEMENT: "NAME",
+            SYSTEM_STATUS: "2877182",
+            SYSTEM_LID: "S1",
+            BCC_KEY: "1v5df35v",
+
+          })
+            .then(r => r.data);
+        }
         api.card
           .order({ fio, phoneNumber })
           .then(m => {
             setFio("");
             setPhoneNumber("");
           })
-          .catch(e => console.warn(e)),
+          .catch(e => console.warn(e))
+      },
       2000
     );
     ym("reachGoal", "send_mess");
