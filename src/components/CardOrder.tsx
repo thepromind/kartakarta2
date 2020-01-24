@@ -231,7 +231,11 @@ const CardOrder = (props: any) => {
             SYSTEM_STATUS: "2877182",
             SYSTEM_LID: "S1",
             BCC_KEY: "1v5df35v",
-
+            utm_source: "utm_source",
+            utm_medium: "utm_medium",
+            utm_campaign: "utm_campaign",
+            utm_term: "utm_term",
+            utm_content: "utm_content"
           })
             .then(r => r.data);
         }
