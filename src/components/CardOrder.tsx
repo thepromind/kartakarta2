@@ -220,24 +220,46 @@ const CardOrder = (props: any) => {
     setTimeout(
       () => {
         if (phoneNumber && setPhoneNumber) {
-          axios.post(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
-            TELEPHONE: phoneNumber,
-            NAME: fio,
-            SYSTEM_TITLE: "#картакарта",
-            SYSTEM_POST_EVENT: "NEW_USER",
-            SYSTEM_LINK: "https://www.bcc.kz/kartakarta",
-            SYSTEM_IBLOCK_ID: 143,
-            SYSTEM_NAME_ELEMENT: "NAME",
-            SYSTEM_STATUS: "2901640",
-            SYSTEM_LID: "S1",
-            BCC_KEY: "1v5df35v",
-            utm_source: "utm_source",
-            utm_medium: "utm_medium",
-            utm_campaign: "utm_campaign",
-            utm_term: "utm_term",
-            utm_content: "utm_content"
-          })
-            .then(r => r.data);
+          const formData = new FormData();
+
+          formData.append('TELEPHONE', phoneNumber);
+          formData.append('NAME', fio);
+          formData.append('SYSTEM_TITLE', "#картакарта");
+          formData.append('SYSTEM_POST_EVENT', "NEW_USER");
+          formData.append('SYSTEM_LINK', "https://www.bcc.kz/kartakarta");
+          formData.append('SYSTEM_IBLOCK_ID', "143");
+          formData.append('SYSTEM_NAME_ELEMENT', "NAME");
+          formData.append('SYSTEM_STATUS', "2901640");
+          formData.append('SYSTEM_LID', "S1");
+          formData.append('BCC_KEY', "1v5df35v");
+          formData.append('utm_source', "utm_source");
+          formData.append('utm_medium', "utm_medium");
+          formData.append('utm_campaign', "utm_campaign");
+          formData.append('utm_term', "utm_term");
+          formData.append('utm_content', "utm_content");
+
+          const response = fetch(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
+            method: 'POST',
+            body: formData
+          });
+          // axios.post(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
+          //   TELEPHONE: phoneNumber,
+          //   NAME: fio,
+          //   SYSTEM_TITLE: "#картакарта",
+          //   SYSTEM_POST_EVENT: "NEW_USER",
+          //   SYSTEM_LINK: "https://www.bcc.kz/kartakarta",
+          //   SYSTEM_IBLOCK_ID: 143,
+          //   SYSTEM_NAME_ELEMENT: "NAME",
+          //   SYSTEM_STATUS: "2901640",
+          //   SYSTEM_LID: "S1",
+          //   BCC_KEY: "1v5df35v",
+          //   utm_source: "utm_source",
+          //   utm_medium: "utm_medium",
+          //   utm_campaign: "utm_campaign",
+          //   utm_term: "utm_term",
+          //   utm_content: "utm_content"
+          // })
+          //   .then(r => r.data);
         }
         api.card
           .order({ fio, phoneNumber })
