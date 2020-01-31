@@ -23,26 +23,59 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         [theme.breakpoints.down('sm')]: {
             mainRoot: {
-                backgroundColor: 'white',
-                display: 'none'
+                backgroundColor: 'white'
             },
             root: {
                 padding: paddingDownSm
             },
-            myFont: {
-                fontStyle: 'normal',
-                fontWeight: 'normal',
-                fontSize: 12,
-                color: 'white'
+            title: {
+                fontStyle: "normal",
+                fontWeight: "bold",
+                fontSize: "26px",
+                marginBottom: 20
+            },
+            subtitle: {
+                fontStyle: "normal",
+                fontWeight: "bold",
+                fontSize: "18px",
+                color: "#5B5B5B",
+                marginBottom: 10
+            },
+            subtitleDesc: {
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: "14px",
+                color: "#5B5B5B",
+                marginBottom: 10
+            },
+            buttonPartner: {
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: 10,
+                color: "#5B5B5B",
+                marginTop: 10
+            },
+            noteButtonPartner: {
+                textTransform: "none",
+                color: "#3F0259",
+                fontSize: 14,
+                marginTop: 10,
+                paddingLeft: 20,
+                paddingRight: 20,
+                borderColor: "#3F0259"
             }
         },
         [theme.breakpoints.between('sm', 'xl')]: {
             mainRoot: {
-                backgroundColor: '#27AE60',
-                padding: "20px 0",
-                display: 'none'
+                padding: "20px 0"
             },
             ...rootSmXl,
+            mainBg: {
+                backgroundImage: 'url(partners_bg.svg)',
+                backgroundSize: 'contain',
+                backgroundPosition: 'right',
+                backgroundRepeat: 'no-repeat',
+            },
             myFont: {
                 fontStyle: 'normal',
                 fontWeight: 'normal',
@@ -50,19 +83,41 @@ const useStyles = makeStyles((theme: Theme) =>
                 textAlign: "center",
                 color: 'white'
             },
-            buttonPartner: {
-                display: 'table',
+            title: {
                 fontStyle: "normal",
-                fontWeight: 500,
+                fontWeight: "bold",
+                fontSize: "40px",
+                marginBottom: 20
+            },
+            subtitle: {
+                fontStyle: "normal",
+                fontWeight: "bold",
+                fontSize: "20px",
+                color: "#5B5B5B",
+                marginBottom: 10
+            },
+            subtitleDesc: {
+                fontStyle: "normal",
+                fontWeight: "normal",
                 fontSize: "18px",
-                height: "64px",
-                width: "232px",
+                color: "#5B5B5B",
+                marginBottom: 10
+            },
+            buttonPartner: {
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: 10,
+                color: "#5B5B5B",
+                marginTop: 10
+            },
+            noteButtonPartner: {
                 textTransform: "none",
-                margin: 'auto',
-                marginTop: "15px",
-                backgroundColor: "white",
-                borderRadius: "4px",
-                color: "#141414"
+                color: "#3F0259",
+                fontSize: 16,
+                marginTop: 10,
+                paddingLeft: 20,
+                paddingRight: 20,
+                borderColor: "#3F0259"
             }
         }
     })
@@ -121,20 +176,23 @@ const Partners = (props: any) => {
 
     return (
         <Grid container className={classes.mainRoot}>
-            <Grid container className={classes.root}>
-                <Grid item xl={12} lg={12} md={12} sm={6} xs={6}>
-                    <Typography className={classes.myFont}>Хотите стать партнером?</Typography>
+            <Grid container className={`${classes.root} ${classes.mainBg}`} spacing={4}>
+                <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
+                    <Typography className={classes.title}>{t('partner.text_1')}</Typography>
+                    <Typography className={classes.subtitle}>{t('partner.text_2')}</Typography>
+                    <Typography className={classes.subtitleDesc}>{t('partner.text_3')}</Typography>
+                    <Typography className={classes.subtitleDesc}>{t('partner.text_4')}</Typography>
+
+                    <Typography className={classes.buttonPartner}>
+                        <Button href="https://www.bcc.kz/partners/" target="_blank"
+                            variant="outlined"
+                            className={classes.noteButtonPartner}
+                        >
+                            {t('partner.button_main')}
+                        </Button>
+                    </Typography>
                 </Grid>
-                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                    <Button
-                        className={classes.buttonPartner}
-                    >
-                        Стать партнером
-              </Button>
 
-
-
-                </Grid>
             </Grid>
         </Grid>
     )

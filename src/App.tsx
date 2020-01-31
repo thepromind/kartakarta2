@@ -61,6 +61,7 @@ function App() {
       <FixedHeader lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
       <BestCard />
       <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
+      <Partners />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />
       <HowToGetCard />
       <CardOrder
@@ -70,7 +71,6 @@ function App() {
       <MobileBanking />
       <AdditionalInfo />
       <HelpYou />
-      <Partners />
       <Footer />
       <SnackBarBottom
         open={isSend}
