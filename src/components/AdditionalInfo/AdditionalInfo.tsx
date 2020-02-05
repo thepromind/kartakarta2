@@ -198,7 +198,7 @@ const Documents = () => {
           <TableRow>
             <TableCell colSpan={2} className={classes.td}>
               <Typography>
-                <a href="Cashback_program_kz" className={classes.a}>
+                <a href="Cashback_program_kz.pdf" className={classes.a}>
                   <img src="pdf.svg" alt="pdf" />
                   &nbsp; {t('block_8.title_14_tab_4')}
                 </a>
