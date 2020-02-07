@@ -196,7 +196,7 @@ const Partners = (props: any) => {
 
           <Typography className={classes.buttonPartner}>
             <Button
-              href="https://www.bcc.kz/partners/?utm_source=partners&utm_medium=button_click&utm_campaign=kartakarta."
+              href="https://www.bcc.kz/partners/?utm_source=kartakarta_partners&utm_medium=button_click&utm_campaign=kartakarta"
               target="_blank"
               variant="outlined"
               className={classes.noteButtonPartner}
