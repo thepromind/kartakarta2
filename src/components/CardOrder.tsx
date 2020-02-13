@@ -232,11 +232,11 @@ const CardOrder = (props: any) => {
           formData.append('SYSTEM_STATUS', "2901640");
           formData.append('SYSTEM_LID', "S1");
           formData.append('BCC_KEY', "1v5df35v");
-          formData.append('utm_source', "utm_source");
-          formData.append('utm_medium', "utm_medium");
-          formData.append('utm_campaign', "utm_campaign");
-          formData.append('utm_term', "utm_term");
-          formData.append('utm_content', "utm_content");
+          formData.append('utm_source', utm_source);
+          formData.append('utm_medium', utm_medium);
+          formData.append('utm_campaign', utm_campaign);
+          formData.append('utm_term', utm_term);
+          formData.append('utm_content', utm_content);
 
           const response = fetch(`https://www.bcc.kz/local/tmpl/ajax/iblock_save.php`, {
             method: 'POST',
