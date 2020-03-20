@@ -8,7 +8,6 @@ import {
   HelpYou,
   MobileBanking,
   AdditionalInfo,
-  GoodAnyTimeWhere,
   Partners,
   Footer,
   FixedHeader
@@ -60,10 +59,9 @@ function App() {
       <Header lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
       <FixedHeader lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
       <BestCard />
-      <GoodAnyTimeWhere scrollToOrder={scrollToOrderRef} />
-      <Partners />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />
       <HowToGetCard />
+      <Partners />
       <CardOrder
         refProp={orderRef}
         snackUp={(message: string) => snackUp(message)}

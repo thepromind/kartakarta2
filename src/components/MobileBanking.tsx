@@ -8,43 +8,55 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       mainRoot: {
-        backgroundColor: "#FAFAFA"
+        background: "linear-gradient(70.95deg, #FFF2F2 0%, #FFF8EB 101.12%)",
+        position: 'relative'
       },
       root: {
         padding: "18px 13px 0px 13px"
       },
+      descValues: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        marginTop: 16,
+        marginBottom: 16
+      },
+      descValuesInner: {
+        paddingRight: 16
+      },
       descBlock: {
-        height: "100%"
+        height: "100%",
+        padding: '24px 16px'
       },
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 26,
         color: "#141414"
       },
       description: {
         fontStyle: "normal",
         fontWeight: "normal",
-        fontSize: 10,
+        fontSize: 18,
         color: "#141414",
-        marginBottom: 24
+        marginBottom: 16
       },
       googlePlayAppStore: {
-        width: 120,
-        height: 40,
         "&:hover": {
           cursor: "pointer"
         }
       },
       img: {
-        width: 165,
-        height: 242,
-        marginTop: 20
+        width: '60%',
+        margin: 'auto',
+        height: 'auto',
+        position: 'relative',
+        bottom: 0
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
       mainRoot: {
-        backgroundColor: "#FAFAFA"
+        background: "linear-gradient(70.95deg, #FFF2F2 0%, #FFF8EB 101.12%)",
+        position: 'relative'
       },
       root: {
         padding: "61px 52px 0px 52px",
@@ -52,8 +64,18 @@ const useStyles = makeStyles((theme: Theme) =>
         marginLeft: "auto",
         marginRight: "auto"
       },
+      descValues: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        marginTop: 24,
+        marginBottom: 48
+      },
+      descValuesInner: {
+        paddingRight: 16
+      },
       descBlock: {
-        height: "100%"
+        height: "100%",
+        padding: '64px 48px'
       },
       title: {
         fontStyle: "normal",
@@ -74,9 +96,10 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       img: {
-        width: 330,
-        height: 484,
-        marginRight: 50
+        width: 'auto',
+        height: 'auto',
+        position: 'absolute',
+        bottom: 0
       }
     }
   })
@@ -111,19 +134,39 @@ const MobileBanking = () => {
   };
 
   return (
-    <Grid container className={classes.mainRoot}>
-      <Grid container className={classes.root}>
+    <Grid container className={classes.root}>
+      <Grid container className={classes.mainRoot}>
         <Grid item xl={8} lg={8} md={8} sm={12} xs={12}>
           <Grid container alignItems="center" className={classes.descBlock}>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
               <Typography className={classes.title}>
-                {t('block_7.title_main')}
+                Мобильное приложение <br />StarBanking
               </Typography>
-              <Typography className={classes.description}>
-                {t('block_7.subtitle_desc')}
-                <br />
-                {t('block_7.subtitle_desc_2')}
-              </Typography>
+              <Grid container className={classes.descValues}>
+                <Grid className={classes.descValuesInner}>
+                  <img src="check-icon.svg" />
+                  <Typography className={classes.description}>
+                    Оплачивайте услуги
+                    <br />бесплатно
+                  </Typography>
+                </Grid>
+
+                <Grid className={classes.descValuesInner}>
+                  <img src="exchange-icon.svg" />
+                  <Typography className={classes.description}>
+                    Управляйте рассрочкой
+                    <br />и кэшбеком
+                  </Typography>
+                </Grid>
+
+                <Grid className={classes.descValuesInner}>
+                  <img src="card-icon.svg" />
+                  <Typography className={classes.description}>
+                    Пополняйте карту удобным <br />для вас способом бесплатно
+                  </Typography>
+                </Grid>
+              </Grid>
+
               <Grid container spacing={3}>
                 <Grid item>
                   <img
@@ -149,7 +192,7 @@ const MobileBanking = () => {
           <Grid container justify="center">
             <img
               className={classes.img}
-              src="stars_mobile_banking.png"
+              src="stars_mobile_banking.svg"
               alt="star_mobile_banking"
             />
           </Grid>

@@ -9,7 +9,6 @@ import {
   Box
 } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Tab from "./Tab";
 import { rootSmXl, paddingDownSm } from "../helper/DefaultStyle";
 import ExpansionPanel from "./ExpansionPanel";
 import ReactGA from "react-ga";
@@ -69,160 +68,6 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
   })
 );
 
-const Tarifs = () => {
-  const classes = useStylesTarifs({});
-  const { t } = useTranslation();
-
-  const rows = [
-    { code: `${t('block_8.title_1_tab_2')}`, value: `${t('block_8.free_main')}` },
-    { code: `${t('block_8.title_2_tab_2')}`, value: `${t('block_8.free_main')}` },
-    { code: `${t('block_8.title_3_tab_2')}`, value: `${t('block_8.free_main')}` },
-    { code: `${t('block_8.title_4_tab_2')}`, value: `${t('block_8.free_main')}` },
-    { code: `${t('block_8.title_5_tab_2')}`, value: `${t('block_8.free_main')}` },
-    {
-      code: `${t('block_8.title_6_tab_2')}`,
-      value: (
-        <Typography className={classes.td}>
-          {t('block_8.subtitle_6_tab_2')} <br /> {t('block_8.subtitle_6_2_tab_2')}
-        </Typography>
-      )
-    },
-    {
-      code: `${t('block_8.title_7_tab_2')}`,
-      value:
-        `${t('block_8.subtitle_6_tab_2_1')}`
-    }
-  ];
-
-  return (
-    <Box width={0.7}>
-      <Table>
-        <TableBody>
-          {rows.map((m, i) => (
-            <TableRow key={i}>
-              <TableCell className={classes.th}>{m.code}</TableCell>
-              <TableCell className={classes.td}>{m.value}</TableCell>
-            </TableRow>
-          ))}
-          <TableRow key={15}>
-            <TableCell colSpan={2} className={classes.td}>
-              {
-                <div>
-                  <Typography>
-                    <a href="tarifs_kz.pdf" className={classes.a}>
-                      <img src="pdf.svg" alt="pdf" />
-                      &nbsp; {t('block_8.title_10_tab_2')}
-                    </a>
-                  </Typography>
-                  <Typography>
-                    <a href="tarifs_ru.pdf" className={classes.a}>
-                      <img src="pdf.svg" alt="pdf" />
-                      &nbsp; {t('block_8.title_11_tab_2')}
-                    </a>
-                  </Typography>
-                  <Typography>
-                    <a href="tarifs_en.pdf" className={classes.a}>
-                      <img src="pdf.svg" alt="pdf" />
-                      &nbsp; {t('block_8.title_12_tab_2')}
-                    </a>
-                  </Typography>
-                </div>
-              }
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </Box>
-  );
-};
-
-const Conditions = () => {
-  const classes = useStylesTarifs({});
-  const { t } = useTranslation();
-
-  const rows = [
-    { code: `${t('block_8.title_1_tab_1')}`, value: `${t('block_8.subtitle_1_tab_1')}` },
-    { code: `${t('block_8.title_2_tab_1')}`, value: `${t('block_8.subtitle_2_tab_1')}` },
-    {
-      code: `${t('block_8.title_3_tab_1')}`,
-      value: (
-        <Typography className={classes.td}>
-          <b>{t('block_8.subtitle_3_tab_1')}</b>
-          <br />
-          {t('block_8.subtitle_3_1_tab_1')}
-          <br />
-          {t('block_8.subtitle_3_2_tab_1')}
-        </Typography>
-      )
-    },
-    { code: `${t('block_8.title_4_tab_1')}`, value: "0%" },
-    { code: `${t('block_8.title_5_tab_1')}`, value: `${t('block_8.subtitle_5_tab_1')}` }
-  ];
-
-  return (
-    <Box width={0.7}>
-      <Table>
-        <TableBody>
-          {rows.map((m, i) => (
-            <TableRow key={i}>
-              <TableCell className={classes.th}>{m.code}</TableCell>
-              <TableCell className={classes.td}>{m.value}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Box>
-  );
-};
-
-const Documents = () => {
-  const classes = useStylesTarifs({});
-  const { t } = useTranslation();
-
-  const rows = ["Программа рассрочки.pdf"];
-
-  return (
-    <Box width={0.7}>
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell colSpan={2} className={classes.td}>
-              <Typography>
-                <a href="Cashback_program_ru.pdf" className={classes.a}>
-                  <img src="pdf.svg" alt="pdf" />
-                  &nbsp; {t('block_8.title_13_tab_4')}
-                </a>
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell colSpan={2} className={classes.td}>
-              <Typography>
-                <a href="Cashback_program_kz.pdf" className={classes.a}>
-                  <img src="pdf.svg" alt="pdf" />
-                  &nbsp; {t('block_8.title_14_tab_4')}
-                </a>
-              </Typography>
-            </TableCell>
-          </TableRow>
-
-          {/* <TableRow>
-            <TableCell colSpan={2} className={classes.td}>
-              <Typography>
-                <a href="#!" className={classes.a}>
-                  <img src="pdf.svg" alt="pdf" />
-                  &nbsp; {t('block_8.title_15_tab_4')}
-                </a>
-              </Typography>
-            </TableCell>
-          </TableRow>*/}
-
-        </TableBody>
-      </Table>
-    </Box>
-  );
-};
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
@@ -232,8 +77,79 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
+        fontSize: 32,
+        color: "#141414",
+        textAlign: 'center',
+        marginBottom: 32,
+        marginTop: 64,
+      },
+      boxTable: {
+        margin: 'auto',
+        width: '100%'
+      },
+      big: {
         fontSize: 20,
-        color: "#141414"
+        color: '#141414',
+        fontStyle: "normal",
+        fontWeight: "500"
+      },
+      th: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 14,
+        color: "#141414",
+        width: '40%'
+      },
+      tr: {
+        '& > th': {
+          borderBottom: '1px solid transparent'
+        },
+        '& > td': {
+          borderBottom: '1px solid transparent'
+        }
+      },
+      td: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 14,
+        color: "#141414",
+        width: '60%',
+        '& > small': {
+          fontSize: 12,
+          color: '#B9B9B9'
+        }
+      },
+      a: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 16,
+        color: "black",
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        margin: "4px 0"
+      },
+      bottomTitle: {
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 28,
+        color: "#141414",
+        textAlign: 'center',
+        marginBottom: 16,
+        marginTop: 32,
+      },
+      filesType: {
+        display: 'grid',
+        background: '#FAFAFA',
+        borderRadius: 8,
+        width: '100%',
+        marginTop: 10,
+        '& > a': {
+          padding: '14px 5px',
+          width: '100%',
+          textAlign: 'center',
+          display: 'block'
+        }
       }
     },
     [theme.breakpoints.between("sm", "xl")]: {
@@ -241,8 +157,79 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontStyle: "normal",
         fontWeight: "bold",
-        fontSize: 40,
-        color: "#141414"
+        fontSize: 56,
+        color: "#141414",
+        textAlign: 'center',
+        marginBottom: 64,
+        marginTop: 128,
+      },
+      boxTable: {
+        margin: 'auto'
+      },
+      big: {
+        fontSize: 20,
+        color: '#141414',
+        fontStyle: "normal",
+        fontWeight: "500"
+      },
+      th: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 16,
+        color: "#141414",
+        width: '40%'
+      },
+      tr: {
+        '& > th': {
+          borderBottom: '1px solid transparent'
+        },
+        '& > td': {
+          borderBottom: '1px solid transparent'
+        }
+      },
+      td: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 16,
+        color: "#141414",
+        width: '60%',
+        '& > small': {
+          fontSize: 12,
+          color: '#B9B9B9'
+        }
+      },
+      a: {
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: 16,
+        color: "black",
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        margin: "4px 0"
+      },
+      bottomTitle: {
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 36,
+        color: "#141414",
+        textAlign: 'center',
+        marginBottom: 32,
+        marginTop: 64,
+      },
+      filesType: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        background: '#FAFAFA',
+        borderRadius: 8,
+        marginTop: 10,
+        '& > a': {
+          padding: '14px 5px',
+          width: '100%',
+          textAlign: 'center',
+          display: 'block'
+        }
       }
     }
   })
@@ -252,39 +239,74 @@ const AdditionalInfo = () => {
   const classes = useStyles({});
   const { t } = useTranslation();
 
-  const swipeTab = (index: number) => {
-    let actionName = "Additional_Conditions";
 
-    if (index === 1) {
-      actionName = "Additional_Rates";
-    } else if (index === 2) {
-      actionName = "Additionally_FAQ";
-    } else if (index === 3) {
-      actionName = "Additionally_Documents";
-    }
-
-    ReactGA.event({
-      category: `BccCard_${actionName}`,
-      action: actionName
-    });
-  };
 
   return (
     <Grid container className={classes.root}>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Typography className={classes.title}>{t('block_8.title_main')}</Typography>
+        <Typography className={classes.title}>Условия и обслуживание по карте</Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Tab
-          onHandleChanged={(i: number) => swipeTab(i)}
-          menuTitle={[
-            `${t('block_8.button_1_tab_1')}`,
-            `${t('block_8.button_2_tab_2')}`,
-            `${t('block_8.button_3_tab_3')}`,
-            `${t('block_8.button_4_tab_4')}`
-          ]}
-          pans={[<Conditions />, <Tarifs />, <ExpansionPanel />, <Documents />]}
-        />
+        <Box width={0.7} className={classes.boxTable}>
+          <Table>
+            <TableBody>
+
+              <TableRow>
+                <TableCell className={classes.th}>Кредитный лимит</TableCell>
+                <TableCell className={classes.td}>до 3 000 000 ₸</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Льготный период</TableCell>
+                <TableCell className={classes.td}>до 55 дней</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Процентная ставка<br />
+                  (без рассрочки)</TableCell>
+                <TableCell className={classes.td}><span><span className={classes.big}>0%</span> в льготный период</span><br />
+                  <small>22,99% - для участников зарплатного проекта (ГЭСВ до 26%)<br />
+                    24,99% - для других клиентов (ГЭСВ до 29%)</small></TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Процентная ставка<br />
+                  (в рассрочку)</TableCell>
+                <TableCell className={classes.td}>0%</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Кешбэк</TableCell>
+                <TableCell className={classes.td}>до 30%</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Выпуск и обслуживание карты</TableCell>
+                <TableCell className={classes.td}>бесплатно</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className={classes.th}>Покупки в рассрочку</TableCell>
+                <TableCell className={classes.td}>бесплатно - у партнеров Банка<br />
+                  1% в мес. - вне сети партнеров Банка</TableCell>
+              </TableRow>
+              <TableRow className={classes.tr}>
+                <TableCell className={classes.th}>Снятие наличных</TableCell>
+                <TableCell className={classes.td}>бесплатно - личные средства до 300 000 Т  в мес. в<br /> любом банкомате РК</TableCell>
+              </TableRow>
+
+            </TableBody>
+          </Table>
+          <Typography className={classes.filesType}>
+            <a href="Cashback_program_ru.pdf" className={classes.a}>
+              <img src="pdf.svg" alt="pdf" />
+              &nbsp; Тарифы
+            </a>
+          </Typography>
+
+          <Typography className={classes.bottomTitle}>Документы</Typography>
+          <Typography className={classes.filesType}>
+            <a href="Cashback_program_ru.pdf" className={classes.a}>
+              <img src="pdf.svg" alt="pdf" />
+              &nbsp; {t('block_8.title_13_tab_4')}
+            </a>
+          </Typography>
+        </Box>
+
       </Grid>
     </Grid>
   );

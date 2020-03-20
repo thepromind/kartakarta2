@@ -32,8 +32,15 @@ const useStyles = makeStyles((theme: Theme) =>
       small: {
         display: "none"
       },
+      smallcard: {
+        width: "100%",
+        marginRight: 20,
+        "& img": {
+          width: "80px"
+        }
+      },
       buttonOrderCard: {
-        background: "#3F0259",
+        background: "#5E65F4",
         minWidth: 230,
         color: "white",
         height: 48,
@@ -44,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontWeight: "bold",
         padding: 0,
         "&:hover": {
-          backgroundColor: "#3F0259",
+          backgroundColor: "#5E65F4",
           opacity: 0.8
         },
         overflow: "hidden"
@@ -75,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
         transition: "all ease-in-out .3s"
       },
       buttonOrderCard: {
-        background: "#3F0259",
+        background: "#5E65F4",
         minWidth: "auto",
         padding: "0 10px",
         color: "white",
@@ -86,13 +93,16 @@ const useStyles = makeStyles((theme: Theme) =>
         textTransform: "none",
         fontWeight: "bold",
         "&:hover": {
-          backgroundColor: "#3F0259",
+          backgroundColor: "#5E65F4",
           opacity: 0.8
         },
         overflow: "hidden"
       },
       smallcard: {
-        marginRight: 20
+        marginRight: 20,
+        "& img": {
+          width: "100%"
+        }
       }
     },
     [theme.breakpoints.down("xs")]: {
@@ -155,8 +165,8 @@ const FixedHeader = (props: any) => {
       className={hide ? classes.hide : classes.header}
     >
       <Grid item xl={6} lg={6} md={6} sm={4} xs={3}>
-        <img src="green-logo.svg" className={classes.logo} />
-        <img src="logo-bcc-small.svg" className={classes.small} />
+        <img src="logo-bcc-black.svg" className={classes.logo} />
+        <img src="logo_smaller.svg" className={classes.small} />
       </Grid>
       <Grid item xl={6} lg={6} md={6} sm={8} xs={9}>
         <Grid
@@ -175,7 +185,7 @@ const FixedHeader = (props: any) => {
             xs={3}
             className={classes.smallcard}
           >
-            <img src="icon_card_small.svg" />
+            <img src="asset_card.svg" />
 
           </Grid>
           <Grid item xl={3} lg={3} md={6} sm={4} xs={4}>

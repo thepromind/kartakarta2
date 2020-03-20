@@ -6,7 +6,6 @@ export { default as HelpYou } from "./HelpYou";
 export { default as MobileBanking } from "./MobileBanking";
 export { default as CardOrder } from "./CardOrder";
 export { default as AdditionalInfo } from "./AdditionalInfo/AdditionalInfo";
-export { default as GoodAnyTimeWhere } from "./GoodAnyTimeWhere/GoodAnyTimeWhere";
 export { default as Partners } from "./Partners";
 export { default as Footer } from "./Footer";
 export { default as FixedHeader } from "./FixedHeader";

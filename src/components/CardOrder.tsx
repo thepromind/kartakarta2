@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 12
       },
       submit: {
-        background: "#3F0259",
+        background: "#5E65F4",
         borderRadius: 4,
         fontSize: 16,
         fontWeight: 500,
@@ -70,14 +70,14 @@ const useStyles = makeStyles((theme: Theme) =>
         height: 40,
         color: "#FFFFFF",
         "&:hover, &:active": {
-          backgroundColor: "#3F0259",
-          borderColor: "#3F0259",
+          backgroundColor: "#5E65F4",
+          borderColor: "#5E65F4",
           opacity: 0.8,
           boxShadow: "none",
           color: "#FFFFFF"
         },
         "&:disabled": {
-          backgroundColor: "#3F0259",
+          backgroundColor: "#5E65F4",
           opacity: 0.4,
           boxShadow: "none",
           color: "#FFFFFF"
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 14
       },
       submit: {
-        background: "#3F0259",
+        background: "#5E65F4",
         borderRadius: "8px",
         fontSize: "20px",
         lineHeight: "28px",
@@ -134,14 +134,14 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "62px",
         color: "#FFFFFF",
         "&:hover, &:active": {
-          backgroundColor: "#3F0259",
-          borderColor: "#3F0259",
+          backgroundColor: "#5E65F4",
+          borderColor: "#5E65F4",
           opacity: 0.8,
           boxShadow: "none",
           color: "#FFFFFF"
         },
         "&:disabled": {
-          backgroundColor: "#3F0259",
+          backgroundColor: "#5E65F4",
           opacity: 0.6,
           boxShadow: "none",
           color: "#FFFFFF"
