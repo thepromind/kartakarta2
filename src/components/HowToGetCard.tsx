@@ -35,18 +35,10 @@ const useStyles = makeStyles((theme: Theme) =>
         width: 300,
         height: 300,
         gridArea: 'a',
-        background: '#E6E6FF',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        position: 'relative',
-        boxShadow: 'inset 0px -6px 14px 0px rgba(0, 0, 0, 0.24)',
+        margin: 'auto',
+        marginTop: 16,
         '& > img': {
-          position: 'absolute',
-          margin: 'auto',
-          bottom: 0,
-          width: '90%',
-          left: 0,
-          right: 0
+          width: '100%'
         }
       },
       animPhone: {
@@ -65,15 +57,11 @@ const useStyles = makeStyles((theme: Theme) =>
       circleIphoneRight: {
         width: 300,
         height: 300,
-        margin: 'auto',
-        background: '#FFF5E2',
-        borderRadius: '50%',
-        overflow: 'hidden',
         gridArea: 'a',
-        display: 'flex',
-        alignItems: 'flex-end',
-        justifyContent: 'center',
+        margin: 'auto',
+        marginTop: 16,
         '& > img': {
+          width: '100%'
         }
       },
       ul: {
@@ -175,36 +163,16 @@ const useStyles = makeStyles((theme: Theme) =>
         width: 450,
         height: 450,
         gridArea: 'a',
-        background: '#E6E6FF',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        position: 'relative',
-        boxShadow: 'inset 0px -6px 14px 0px rgba(0, 0, 0, 0.24)',
         '& > img': {
-          position: 'absolute',
-          margin: 'auto',
-          bottom: 0,
-          width: '90%',
-          left: 0,
-          right: 0
+          width: '100%'
         }
       },
       circleIphoneRight: {
         width: 450,
         height: 450,
         gridArea: 'a',
-        background: '#FFF5E2',
-        borderRadius: '50%',
-        boxShadow: 'inset 0px -6px 14px 0px rgba(0, 0, 0, 0.24)',
-        overflow: 'hidden',
-        position: 'relative',
         '& > img': {
-          position: 'absolute',
-          margin: 'auto',
-          width: '90%',
-          bottom: 0,
-          left: 0,
-          right: 0
+          width: '100%'
         }
       },
       ul: {
@@ -290,18 +258,38 @@ const useStyles = makeStyles((theme: Theme) =>
         gridTemplateAreas: ' "b" "a" "c" ',
         alignItems: 'unset'
       },
-      circleIphoneRight: {
+
+      circleIphone: {
         width: 300,
         height: 300,
         margin: 'auto',
         gridArea: 'a',
-        background: '#FFF5E2',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'flex-end',
-        justifyContent: 'center',
+        marginTop: 16,
+        '& img': {
+          width: '100%'
+        }
+      },
+      animPhone: {
+        animationName: '$upDown',
+        transform: 'translate3d(0, 0, 0)',
+        animationDuration: '2s',
+        animationDelay: '1s',
+        animationFillMode: 'forwards',
+        animationIterationCount: 'infinite',
+        animationTimingFunction: 'linear',
+        animationDirection: 'alternate'
+      },
+      onOff: {
+        display: 'none'
+      },
+      circleIphoneRight: {
+        width: 300,
+        height: 300,
+        margin: 'auto',
+        marginTop: 16,
+        gridArea: 'a',
         '& > img': {
+          width: '100%'
         }
       },
 
@@ -357,7 +345,7 @@ const HowToGetCard = (props: any) => {
       <Grid container alignItems="center" className={`${classes.root} ${classes.gridRoot}`}>
 
         <Grid className={classes.circleIphone}>
-          <img src="iphone-cashback.svg" className={classes.animPhone} />
+          <img src="circlePhone-1.png" className={classes.animPhone} />
         </Grid>
 
         <Typography className={classes.mainTitle}>
@@ -452,7 +440,7 @@ const HowToGetCard = (props: any) => {
         </ul>
 
         <Grid className={classes.circleIphoneRight}>
-          <img src="iphone-cashback-2.svg" className={classes.animPhone} />
+          <img src="circlePhone-2.png" className={classes.animPhone} />
         </Grid>
 
       </Grid>

@@ -42,8 +42,8 @@ const useStyles = makeStyles((theme: Theme) =>
       box: {
         textAlign: "center",
         fontWeight: "bold",
-        fontSize: "20px",
-        lineHeight: "20px"
+        fontSize: "30px",
+        lineHeight: "36px"
       },
       formControlCheckBox: {
         marginTop: "20px"
@@ -60,15 +60,19 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 12
       },
       submit: {
-        background: "#5E65F4",
-        borderRadius: 4,
-        fontSize: 16,
-        fontWeight: 500,
         fontStyle: "normal",
-        boxShadow: "none",
+        fontWeight: 500,
+        display: 'table',
+        margin: 'auto',
+        padding: '1rem 4rem',
+        fontSize: "18px",
         textTransform: "none",
-        height: 40,
-        color: "#FFFFFF",
+        backgroundColor: "#5E65F4",
+        borderRadius: "8px",
+        color: "#fff",
+        marginTop: 30,
+        marginBottom: 15,
+        transition: '.3s',
         "&:hover, &:active": {
           backgroundColor: "#5E65F4",
           borderColor: "#5E65F4",

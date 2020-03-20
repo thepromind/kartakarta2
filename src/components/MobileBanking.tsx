@@ -46,8 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       img: {
-        width: '60%',
-        margin: 'auto',
+        width: 'auto',
         height: 'auto',
         position: 'relative',
         bottom: 0
@@ -192,7 +191,7 @@ const MobileBanking = () => {
           <Grid container justify="center">
             <img
               className={classes.img}
-              src="stars_mobile_banking.svg"
+              src="stars_mobile_banking.png"
               alt="star_mobile_banking"
             />
           </Grid>

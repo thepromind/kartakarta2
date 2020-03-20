@@ -53,10 +53,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       wrapper: {
         position: 'absolute',
-        top: 0,
+        top: 50,
         right: 0,
         width: '100px',
         height: '100px',
+        WebkitFilter: "url('#filter')",
         filter: "url('#filter')"
       },
       ball: {
@@ -167,7 +168,6 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       assetCard: {
-        boxShadow: '0px 4px 50px rgba(0, 0, 0, 0.24)',
         zIndex: 1,
         width: '100%',
         marginTop: 20
@@ -239,7 +239,19 @@ const useStyles = makeStyles((theme: Theme) =>
           fontSize: 20,
           color: '#141414'
         }
-      }
+      },
+      select: {
+        color: 'black',
+        '&:before': {
+          borderColor: 'black',
+        },
+        '&:after': {
+          borderColor: 'black',
+        }
+      },
+      icon: {
+        fill: 'black',
+      },
     },
     [theme.breakpoints.between("sm", "xl")]: {
       svgFile: {
@@ -255,6 +267,7 @@ const useStyles = makeStyles((theme: Theme) =>
         right: 0,
         width: '300px',
         height: '300px',
+        WebkitFilter: "url('#filter')",
         filter: "url('#filter')"
       },
       ball: {
@@ -415,17 +428,16 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     select: {
-      display: 'none',
-      color: 'white',
+      color: 'black',
       '&:before': {
-        borderColor: 'white',
+        borderColor: 'black',
       },
       '&:after': {
-        borderColor: 'white',
+        borderColor: 'black',
       }
     },
     icon: {
-      fill: 'white',
+      fill: 'black',
     },
   })
 );
@@ -456,7 +468,8 @@ const Header = (props: any) => {
         <defs>
           <filter id="filter">
             <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -10" result="filter" />
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -10" result="filter" />
             <feComposite in="SourceGraphic" in2="filter" operator="atop" />
           </filter>
         </defs>

@@ -145,9 +145,7 @@ const useStyles = makeStyles((theme: Theme) =>
           alignItems: 'flex-start',
         },
         '& .MuiTabs-flexContainer': {
-          flexWrap: 'nowrap',
-          flexDirection: 'unset',
-          overflowX: 'auto'
+          flexWrap: 'nowrap'
         },
         '& button': {
           padding: 24,
