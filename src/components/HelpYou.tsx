@@ -125,6 +125,11 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 32,
         marginTop: 64,
       },
+      imgStick: {
+        marginRight: 16,
+        marginTop: 16,
+        width: 70
+      },
       helpYou: {
         fontStyle: "normal",
         fontWeight: "bold",
@@ -178,6 +183,10 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       graphPanel: {
         width: '100%'
+      },
+      imgStick: {
+        marginTop: 16,
+        marginRight: 16
       },
       root: {
         padding: "72px 52px 72px 52px",
@@ -305,9 +314,10 @@ const HelpYou = () => {
             className={classes.tabs}
           >
             <Tab label="О #картакарта" {...a11yProps(0)} />
-            <Tab label="Кешбэк" {...a11yProps(1)} />
-            <Tab label="Кредитный лимит" {...a11yProps(2)} />
-            <Tab label="Рассрочка" {...a11yProps(3)} />
+            <Tab label="Кэшбэк" {...a11yProps(1)} />
+            <Tab label="Как не платить проценты" {...a11yProps(2)} />
+            <Tab label="Кредитный лимит" {...a11yProps(3)} />
+            <Tab label="Рассрочка" {...a11yProps(4)} />
           </Tabs>
           <Grid className={classes.tabsInner}>
             <TabPanel value={value} index={0}>
@@ -319,18 +329,26 @@ const HelpYou = () => {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    #картакарта - это универсальная карта с кредитным лимитом. С #картакарта можно оплачивать покупки и не платить проценты в льготный период, покупать в рассрочку без переплат у партнеров Банка, зарабатывать на классном кешбэке. Управление режимом рассрочки и кешбэком - онлайн в мобильном приложении StarBanking
+                    #картакарта - по нашему мнению, лучшая кредитная карта в Казахстане.<br />
+                    Картой можно:<br />
+                    - оплачивать покупки и не платить проценты в льготный период<br />
+                    - покупать в рассрочку без переплат<br />
+                    - зарабатывать супер кэшбэки<br />
+                    При этом Вы сами управляете режимом рассрочки и кэшбэком онлайн в приложении StarBanking
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               <ExpansionPanel square expanded={expanded === 'panel2'} onChange={handleChangePanel('panel2')}>
                 <ExpansionPanelSummary aria-controls="panel2d-content" id="panel2d-header">
-                  <Typography>Могу ли я расплачиваться картой за границей?</Typography>
+                  <Typography>Как заработать с #картакарта?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Картой можно пользоваться по всему миру!
+                    Выбирайте любимые категории в приложении StarBanking и зарабатывайте кэшбэки до 10% за покупки по всему миру!<br />
+                  Каждый месяц - новые категории!<br />
+
+                  кэшбэки при покупках у партнеров до 30%!
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -342,22 +360,15 @@ const HelpYou = () => {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Пополняйте карту с другой карты или счета, банковским переводом из другого банка, наличными через банкоматы с функцией приема наличных, терминалы или кассу Банка. Пополнение карты - бесплатно!
+                    Пополняйте карту бесплатно:<br />
+                  - переводом с другой карты/счета, открытых в Банке, через StarBanking<br />
+                  - переводом с карт других банков через StarBanking или приложения этих банков<br />
+                  - наличными в банкоматах (с функцией приема наличных) и кассах Банка<br />
+                  - в информационно-платежных терминалах Банка
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel4'} onChange={handleChangePanel('panel4')}>
-                <ExpansionPanelSummary aria-controls="panel4d-content" id="panel4d-header">
-                  <Typography>Я нерезидент, я могу получить кредитный лимит по карте?</Typography>
-                  <span className={classes.plusMinus}></span>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  <Typography>
-                    На данный момент кредитный лимит устанавливается только резидентам РК, но Вы можете пользоваться картой за счет личных денег и получать кешбэк до 30%
-          </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
 
             </TabPanel>
 
@@ -366,47 +377,165 @@ const HelpYou = () => {
 
               <ExpansionPanel square expanded={expanded === 'panel5'} onChange={handleChangePanel('panel5')}>
                 <ExpansionPanelSummary aria-controls="panel5d-content" id="panel5d-header">
-                  <Typography>Что такое кешбэк?</Typography>
+                  <Typography>Что такое кэшбэк?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Мы готовы платить Вам, чтобы Вы реже носили с собой кучу наличных и чаще расплачивались картой. Кешбэк за покупки по карте — это вознаграждение от Банка и наших партнеров за пользование картой в виде возврата определенной суммы за покупки. Совершайте покупки по #картакарта, накапливайте кешбэк, переводите кешбэк на #картакарта реальными деньгами
+                    Кэшбэк — это возврат части денег при покупке.<br />
+                    Совершайте покупки по карте, накапливайте кэшбэк, переводите кэшбэк на карту реальными деньгами
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               <ExpansionPanel square expanded={expanded === 'panel6'} onChange={handleChangePanel('panel6')}>
                 <ExpansionPanelSummary aria-controls="panel6d-content" id="panel6d-header">
-                  <Typography>Я получу приветственный бонус?</Typography>
+                  <Typography>Как заработать с #картакарта на кэшбэке?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Да, за первую покупку по карте мы зачислим на Ваш кешбэк счет приветственный бонус - 10% от суммы покупки (макс 1 000 Т)
+                    Заработать на кэшбэках очень легко, ведь у нас самые крутые кэшбэки!<br />
+
+                  Расплачивайтесь только нашей картой, и Вы получите больше кэшбэка:<br />
+                  1% за покупку<br />
+                  +1% за покупку, если хотите больше кэшбэка, откройте вклад Рахмет/Рахмет+ с остатком от 1 млн Т<br />
+                  до 10% в любимых категориях<br />
+                  до 30% за покупки у партнеров Банка
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
               <ExpansionPanel square expanded={expanded === 'panel7'} onChange={handleChangePanel('panel7')}>
                 <ExpansionPanelSummary aria-controls="panel7d-content" id="panel7d-header">
-                  <Typography>Как заработать с #картакарта?</Typography>
+                  <Typography>Где посмотреть список партнеров Банка, предоставляющих кэшбэк?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Оплачивайте картой и зарабатывайте кешбэк до 30%!
+                    Со списком партнеров можно ознакомиться на странице с партнерами (ссылку зашить). Совсем скоро партнеры появятся и в приложении StarBanking!
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
               <ExpansionPanel square expanded={expanded === 'panel8'} onChange={handleChangePanel('panel8')}>
                 <ExpansionPanelSummary aria-controls="panel8d-content" id="panel8d-header">
-                  <Typography>Как выбирать любимые категории с повышенным кешбэком?</Typography>
+                  <Typography>Как я узнаю, что данный магазин является партнером?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    В начале каждого месяца мы будем Вам предлагать новый набор категорий покупок с кешбэком до 10%. Выбор любимых категорий Вы сможете делать в мобильном приложении StarBanking
+                    Наших партнеров Вы сможете определить по наклейке с указанием #картакарта и словом "кэшбэк"
+          </Typography>
+                  <img src="nakleika-cashback.svg" />
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel60'} onChange={handleChangePanel('panel60')}>
+                <ExpansionPanelSummary aria-controls="panel60d-content" id="panel60-header">
+                  <Typography>Как выбирать любимые категории с повышенным кэшбэком?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    В начале каждого месяца мы будем Вам предлагать новый набор категорий покупок с кэшбэком до 10%. Выбор любимых категорий Вы сможете делать в мобильном приложении StarBanking
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel61'} onChange={handleChangePanel('panel61')}>
+                <ExpansionPanelSummary aria-controls="panel61d-content" id="panel61-header">
+                  <Typography>Я получу кэшбэк за покупки за границей?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Да, расплачивайтесь картой везде!<br />
+Мы выплачиваем кэшбэки за покупки в Казахстане и за рубежом
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel62'} onChange={handleChangePanel('panel62')}>
+                <ExpansionPanelSummary aria-controls="panel62d-content" id="panel62-header">
+                  <Typography>Какой минимальный кэшбэк в месяц?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Мин сумма кэшбэка - 500 тенге в месяц.<br />
+Совершайте покупки, накапливайте мин сумму в течение месяца и зарабатывайте кэшбэк. С нашим кэшбэком выполнить это условие очень легко!
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel63'} onChange={handleChangePanel('panel63')}>
+                <ExpansionPanelSummary aria-controls="panel63d-content" id="panel63-header">
+                  <Typography>Какой максимальный кэшбэк в месяц?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Максимальная сумма кэшбэка в месяц от Банка установлена в 20 000 тенге
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel64'} onChange={handleChangePanel('panel64')}>
+                <ExpansionPanelSummary aria-controls="panel64d-content" id="panel64-header">
+                  <Typography>Куда зачисляется кэшбэк?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Кэшбэк зачисляется автоматически на Ваш кэшбэк счет. Все зачисления на кэшбэк счет Вы можете контролировать в приложении StarBanking
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel65'} onChange={handleChangePanel('panel65')}>
+                <ExpansionPanelSummary aria-controls="panel65d-content" id="panel65-header">
+                  <Typography>Когда зачисляется мой кэшбэк?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Кэшбэк на Ваш кэшбэк счет зачисляется при списании суммы покупки с Вашей #картакарта. Обычно в течение 1-3 дней
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel66'} onChange={handleChangePanel('panel66')}>
+                <ExpansionPanelSummary aria-controls="panel66d-content" id="panel66-header">
+                  <Typography>Как я могу переводить накопленный кэшбэк на карту?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Накопленный кэшбэк можно переводить на #картакарта в любое время в приложении StarBanking. При остатке на кэшбэк счете от 2 000 Т кнопка "Перевести" становится доступной
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel67'} onChange={handleChangePanel('panel67')}>
+                <ExpansionPanelSummary aria-controls="panel67d-content" id="panel67-header">
+                  <Typography>В какие сроки я могу перевести кэшбэк на карту?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Срок действия кэшбэка - 1 год с момента его зачисления на кэшбэк счет. Накапливайте кэшбэк и переводите реальными деньгами на #картакарта
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel68'} onChange={handleChangePanel('panel68')}>
+                <ExpansionPanelSummary aria-controls="panel68d-content" id="panel68-header">
+                  <Typography>Будут ли по #картакарта новые акции и предложения?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Да, конечно, мы будем радовать Вас новыми кэшбэками и супер акциями!
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -417,17 +546,100 @@ const HelpYou = () => {
 
               <ExpansionPanel square expanded={expanded === 'panel9'} onChange={handleChangePanel('panel9')}>
                 <ExpansionPanelSummary aria-controls="panel9d-content" id="panel9d-header">
-                  <Typography>Зачем мне нужен кредитный лимит по #картакарта?</Typography>
+                  <Typography>Как пользоваться кредитным лимитом бесплатно?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Кредитный лимит - это Ваша личная заначка, когда личных денег на покупку оказалось недостаточно
+                    Пользоваться кредитным лимитом бесплатно проще простого:<br />
+                    1. Вы совершаете покупки картой в течение месяца (для примера, в марте).<br />
+                    2. 1-ого числа следующего месяца мы рассчитываем по Вашей карте сумму ""Льготного платежа"" (в нашем примере, 1 апреля)<br />
+                    3. Вы возвращаете сумму ""Льготного платежа"" на карту до 25-ого числа (в нашем примере, до 25 апреля).<br />
+                    Мы не начисляем проценты за покупки, сделанные в марте.<br />
+                    Внимание! Для получения льготных условий всегда вносите оплату своевременно без опозданий
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               <ExpansionPanel square expanded={expanded === 'panel10'} onChange={handleChangePanel('panel10')}>
                 <ExpansionPanelSummary aria-controls="panel10d-content" id="panel10d-header">
+                  <Typography>Что такое льготный период?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Льготный период - это срок, в течение которого Вы пользуетесь кредитным лимитом и не платите проценты.<br />
+
+                    Он действует с момента использования лимита и до 25-ого числа следующего месяца (даты платежа), при условии погашения суммы Льготного платежа до данной даты.<br />
+
+                    Например, в марте Вы купили товар без рассрочки на 20 000 Т, а в рассрочку на 30 000 Т у нашего партнера (сроком на 3 мес). Если до 25 апреля Вы внесете на #картакарта 30 000 Т (долг без рассрочки 20 000 Т + ежемесячный платеж по рассрочке 10 000 Т), то проценты не начислятся.
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel11'} onChange={handleChangePanel('panel11')}>
+                <ExpansionPanelSummary aria-controls="panel11d-content" id="panel11d-header">
+                  <Typography>Что такое льготный платеж?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Льготный платеж - сумма, при оплате которой использование кредитного лимита за прошедший месяц будет бесплатным.<br />
+
+Рассчитывается = 100% долга без рассрочки + плановый платеж по рассрочкам.
+          </Typography>
+                  <img src="credit_card_graph.svg" className={classes.graphPanel} />
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel12'} onChange={handleChangePanel('panel12')}>
+                <ExpansionPanelSummary aria-controls="panel12d-content" id="panel12d-header">
+                  <Typography>Сколько длится льготный период?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    до 55 дней
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+
+
+
+            </TabPanel>
+
+
+            <TabPanel value={value} index={3}>
+
+
+              <ExpansionPanel square expanded={expanded === 'panel15'} onChange={handleChangePanel('panel15')}>
+                <ExpansionPanelSummary aria-controls="panel15d-content" id="panel15d-header">
+                  <Typography>Что если я получу карту с нулевым кредитным лимитом, что мне с ней делать, и дадут ли мне лимит в будущем?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Если Вы получили карту с нулевым кредитным лимитом, не расстраивайтесь.<br />
+Расплачивайтесь за покупки личными деньгами и получайте кэшбэк до 30%!<br />
+При активном использовании карты мы увидим Вашу платежную историю и сможем пересмотреть размер лимита.
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel square expanded={expanded === 'panel16'} onChange={handleChangePanel('panel16')}>
+                <ExpansionPanelSummary aria-controls="panel16d-content" id="panel16d-header">
+                  <Typography>Зачем мне нужен кредитный лимит по #картакарта?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Кредитный лимит - это лимит средств, который Банк может предоставить Вам в долг.<br />
+Очень удобно, если вдруг личных денег на покупку не хватает. Из нашего личного опыта, ведь мы тоже пользуемся #картакарта :)
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel17'} onChange={handleChangePanel('panel17')}>
+                <ExpansionPanelSummary aria-controls="panel17d-content" id="panel17d-header">
                   <Typography>Как я узнаю,что мне установили кредитный лимит?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
@@ -438,22 +650,8 @@ const HelpYou = () => {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel11'} onChange={handleChangePanel('panel11')}>
-                <ExpansionPanelSummary aria-controls="panel11d-content" id="panel11d-header">
-                  <Typography>Как правильно пользоваться кредитным лимитом и не платить проценты</Typography>
-                  <span className={classes.plusMinus}></span>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  <Typography>
-                    1 сентября вы совершаете покупку на сумму 5 000 тенге за счет кредитного лимита<br />
-                    2.  Погасив 5 000 тенге до 25 октября, вы не платите никаких процентов за пользование кредитным лимитом
-          </Typography>
-                  <img src="credit_card_graph.svg" className={classes.graphPanel} />
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-
-              <ExpansionPanel square expanded={expanded === 'panel12'} onChange={handleChangePanel('panel12')}>
-                <ExpansionPanelSummary aria-controls="panel12d-content" id="panel12d-header">
+              <ExpansionPanel square expanded={expanded === 'panel18'} onChange={handleChangePanel('panel18')}>
+                <ExpansionPanelSummary aria-controls="panel18d-content" id="panel18d-header">
                   <Typography>Как будут тратиться деньги, если у меня есть и личные деньги, и кредитный лимит на карте?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
@@ -464,8 +662,8 @@ const HelpYou = () => {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel13'} onChange={handleChangePanel('panel13')}>
-                <ExpansionPanelSummary aria-controls="panel13d-content" id="panel13d-header">
+              <ExpansionPanel square expanded={expanded === 'panel19'} onChange={handleChangePanel('panel19')}>
+                <ExpansionPanelSummary aria-controls="panel19d-content" id="panel19d-header">
                   <Typography>Я могу погашать задолженность по карте досрочно?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
@@ -476,82 +674,196 @@ const HelpYou = () => {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel14'} onChange={handleChangePanel('panel14')}>
-                <ExpansionPanelSummary aria-controls="panel14d-content" id="panel14d-header">
-                  <Typography>Что если я получу карту с нулевым кредитным лимитом, что мне с ней делать, и дадут ли мне лимит в будущем?</Typography>
+              <ExpansionPanel square expanded={expanded === 'panel20'} onChange={handleChangePanel('panel20')}>
+                <ExpansionPanelSummary aria-controls="panel20d-content" id="panel20d-header">
+                  <Typography>Что такое минимальный платеж?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    С #картакарта Вы зарабатываете деньги тогда, когда их тратите. Покупайте за счет личных денег, получайте кешбэк до 30%, и Банк пересмотрит размер лимита. Если Банком принято решение о нулевом кредитном лимите, у Вас есть возможность получить его позже.
+                    Минимальный платеж - это сумма, которая состоит из 5% долга без рассрочки + плановый платеж по рассрочке.<br />
+Вы оплачиваете его до 25-ого числа месяца, чтобы не выйти на просрочку
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel21'} onChange={handleChangePanel('panel21')}>
+                <ExpansionPanelSummary aria-controls="panel21d-content" id="panel21d-header">
+                  <Typography>Как я могу узнать сумму минимального платежа по карте?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    1-ого числа каждого месяца Вы получаете СМС с суммой минимального платежа и сроком оплаты.<br />
+                    Вы также можете посмотреть ее в StarBanking, выбрав карта из списка доступных счетов.
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel22'} onChange={handleChangePanel('panel22')}>
+                <ExpansionPanelSummary aria-controls="panel22d-content" id="panel22d-header">
+                  <Typography>Когда я должен погашать сумму минимального платежа?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Сумма минимального платежа выставляется к оплате 1-ого числа каждого месяца. Срок оплаты - до 25-ого числа.<br />
+Например, Вы использовали кредитный лимит в марте. 1 апреля Банк выставляет сумму минимального платежа. Срок оплаты - до 25 апреля
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel23'} onChange={handleChangePanel('panel23')}>
+                <ExpansionPanelSummary aria-controls="panel23d-content" id="panel23d-header">
+                  <Typography>Если я не оплачу сумму минимального платежа вовремя?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Если Вы забыли внести сумму минимального платежа вовремя, и мы не смогли автоматически погасить сумму с других Ваших счетов в Банке, Вы получите СМС о необходимости срочно внести платеж.<br />
+Чтобы не допустить просрочку, влияющую на Вашу кредитную историю, и избежать начисления неустойки, рекомендуем оплачивать вовремя
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel24'} onChange={handleChangePanel('panel24')}>
+                <ExpansionPanelSummary aria-controls="panel24d-content" id="panel24d-header">
+                  <Typography>Можно ли увеличить кредитный лимит?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Сейчас мы работаем над этим
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel25'} onChange={handleChangePanel('panel25')}>
+                <ExpansionPanelSummary aria-controls="panel25d-content" id="panel25d-header">
+                  <Typography>Я нерезидент, я могу получить кредитный лимит по карте?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    На данный момент кредитный лимит устанавливается только резидентам РК, но Вы можете пользоваться картой за счет личных денег и получать кэшбэк до 30%
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
 
+
             </TabPanel>
-            <TabPanel value={value} index={3}>
+
+            <TabPanel value={value} index={4}>
 
 
-              <ExpansionPanel square expanded={expanded === 'panel15'} onChange={handleChangePanel('panel15')}>
-                <ExpansionPanelSummary aria-controls="panel15d-content" id="panel15d-header">
+              <ExpansionPanel square expanded={expanded === 'panel80'} onChange={handleChangePanel('panel80')}>
+                <ExpansionPanelSummary aria-controls="panel80d-content" id="panel80d-header">
                   <Typography>Что такое рассрочка по #картакарта?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    В рассрочку покупать выгодно, особенно у партнеров Банка - без процентов и комиссий! Например, в январе Вы совершили покупку в рассрочку на 30 000 Т на срок 3 месяца. Сумма делится на 3 части. Каждый месяц (февраль, март, апрель) Вы возвращаете по 10 000 Т и не платите проценты. Плановый (ежемесячный) платеж по рассрочке 10 000 Т автоматически включается в сумму минимального платежа, выставляемого Банком для оплаты
+                    В рассрочку покупать выгодно, особенно у партнеров Банка - без процентов и комиссий!<br />
+Например, в марте Вы совершили покупку в рассрочку на 30 000 Т на срок 3 месяца. Сумма делится на 3 части. Каждый месяц (апрель, май, июнь) Вы возвращаете по 10 000 Т и не платите проценты.<br />
+Плановый (ежемесячный) платеж по рассрочке 10 000 Т автоматически включается в сумму минимального платежа, выставляемого Банком для оплаты 1-ого числа каждого месяца
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
-              <ExpansionPanel square expanded={expanded === 'panel16'} onChange={handleChangePanel('panel16')}>
-                <ExpansionPanelSummary aria-controls="panel16d-content" id="panel16d-header">
+              <ExpansionPanel square expanded={expanded === 'panel81'} onChange={handleChangePanel('panel81')}>
+                <ExpansionPanelSummary aria-controls="panel81d-content" id="panel81d-header">
                   <Typography>Как включить режим рассрочки по #картакарта?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Вы сможете включать и отключать режими рассрочки онлайн в мобильном приложении StarBanking
+                    Вы сможете управлять режимом рассрочки онлайн в мобильном приложении StarBanking.<br />
+Включите режим рассрочки, проведите покупку и выключите режим, если пока не планируете покупать в рассрочку
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel17'} onChange={handleChangePanel('panel17')}>
-                <ExpansionPanelSummary aria-controls="panel17d-content" id="panel17d-header">
+              <ExpansionPanel square expanded={expanded === 'panel82'} onChange={handleChangePanel('panel82')}>
+                <ExpansionPanelSummary aria-controls="panel82d-content" id="panel82d-header">
                   <Typography>Какие сроки рассрочки предусмотрены по #картакарта?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    В сети партнеров Банка - 3, 6 или 12 месяцев в зависимости от нашей договоренности с партнером. Вне сети партнеров Банка - 3 месяца
+                    В сети партнеров Банка - 3, 6 или 12 месяцев в зависимости от нашей договоренности с партнером.<br />
+Вне сети партнеров Банка - 3 месяца
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel18'} onChange={handleChangePanel('panel18')}>
-                <ExpansionPanelSummary aria-controls="panel18d-content" id="panel18d-header">
+              <ExpansionPanel square expanded={expanded === 'panel83'} onChange={handleChangePanel('panel83')}>
+                <ExpansionPanelSummary aria-controls="panel83d-content" id="panel83d-header">
+                  <Typography>Где я могу посмотреть список партнеров Банка?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Со списком партнеров можно ознакомиться в приложении StarBanking, а также на странице <a href=""> с партнерами</a>
+                  </Typography>
+
+                  <img src="nakleika-3.svg" className={classes.imgStick} />
+
+                  <img src="nakleika-6.svg" className={classes.imgStick} />
+
+                  <img src="nakleika-12.svg" className={classes.imgStick} />
+
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel84'} onChange={handleChangePanel('panel84')}>
+                <ExpansionPanelSummary aria-controls="panel84d-content" id="panel84d-header">
+                  <Typography>Как я узнаю, что данный магазин является партнером?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Наших партнеров Вы сможете определить по наклейке с указанием #картакарта и сроком рассрочки
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
+              <ExpansionPanel square expanded={expanded === 'panel85'} onChange={handleChangePanel('panel85')}>
+                <ExpansionPanelSummary aria-controls="panel85d-content" id="panel85d-header">
                   <Typography>Есть ли комиссия за рассрочку?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Покупки у партнеров Банка без процентов и комиссий. Покупки вне сети партнеров Банка с комиссией 1% от суммы покупки за счет кредитного лимита. Комиссия начисляется каждый месяц в течение периода рассрочки
+                    Покупки у партнеров Банка без процентов и комиссий.<br />
+Покупки вне сети партнеров Банка с комиссией 1% от суммы покупки за счет кредитного лимита.<br />
+ Комиссия начисляется каждый месяц в течение периода рассрочки
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel19'} onChange={handleChangePanel('panel19')}>
-                <ExpansionPanelSummary aria-controls="panel19d-content" id="panel19d-header">
+              <ExpansionPanel square expanded={expanded === 'panel86'} onChange={handleChangePanel('panel86')}>
+                <ExpansionPanelSummary aria-controls="panel86d-content" id="panel86d-header">
                   <Typography>Я могу покупать в рассрочку за счет личных денег?</Typography>
                   <span className={classes.plusMinus}></span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Покупки в рассрочку возможны за счет кредитного лимита
+                    Покупки в рассрочку возможны только за счет кредитного лимита
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
+              <ExpansionPanel square expanded={expanded === 'panel87'} onChange={handleChangePanel('panel86')}>
+                <ExpansionPanelSummary aria-controls="panel87d-content" id="panel87d-header">
+                  <Typography>Какая минимальная сумма покупки в рассрочку?</Typography>
+                  <span className={classes.plusMinus}></span>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    Минимальная сумма покупки в рассрочку - 5 000 Т (за счет кредитного лимита)
+          </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
 
             </TabPanel>
           </Grid>

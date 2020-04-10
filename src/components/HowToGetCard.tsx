@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { paddingDownSm, rootSmXl } from "./helper/DefaultStyle";
+import CountUp from 'react-countup';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       mainTitle: {
         fontStyle: "normal",
         fontWeight: "500",
-        fontSize: 56,
+        fontSize: 28,
         lineHeight: '1.2',
         color: "#141414",
         display: 'grid',
@@ -296,7 +297,8 @@ const useStyles = makeStyles((theme: Theme) =>
       mainTitle: {
         fontStyle: "normal",
         fontWeight: "500",
-        fontSize: 56,
+        fontSize: 28,
+        textAlign: 'center',
         lineHeight: '1.2',
         color: "#141414",
         display: 'grid',
@@ -353,18 +355,18 @@ const HowToGetCard = (props: any) => {
           </Typography>
         <ul className={classes.ul}>
           <li className={classes.li}>
-            Каждый месяц вы получаете новый набор категорий с повышенным кэшбеком до 10%
+            Каждый месяц вы получаете новый набор категорий с повышенным кэшбэком до 10%
                   </li>
           <li className={classes.li}>Выбирайте 2 любимые категории на месяц в приложении StarBanking</li>
-          <li className={classes.li}>Переводите накопленный кэшбек
+          <li className={classes.li}>Переводите накопленный кэшбэк
 на #картакарта в любое время</li>
         </ul>
       </Grid>
 
       <Grid container className={classes.root}>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12} className={classes.numCashGive}>
-          <span className={classes.subTextCash}>Зачислено кэшбека нашим клиентам</span>
-          <Typography className={classes.numTextCash}>22 806 450 ₸</Typography>
+          <span className={classes.subTextCash}>Зачислено кэшбэка наших клиентов с января 2020 года</span>
+          <Typography className={classes.numTextCash}> <CountUp delay={2} start={20} end={26} duration={10} />  <CountUp delay={2} start={392} end={695} duration={5} separator=" " /> <CountUp delay={2} start={687} end={828} duration={5} /> ₸</Typography>
         </Grid>
 
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -432,11 +434,11 @@ const HowToGetCard = (props: any) => {
           </Typography>
         <ul className={classes.ul}>
           <li className={classes.li}>
-            Вы решаете как оплачивать покупки:<br />
-            Одним платежом или в рассрочку до 12 месяцев
+            Решайте сами, как провести покупку – <br />
+          в рассрочку или нет
                   </li>
-          <li className={classes.li}>Покупайте в рассрочку по всему миру и в интернете</li>
-          <li className={classes.li}>Получите деньги без процентов до 55 дней с карты</li>
+          <li className={classes.li}>Включайте режим рассрочки в один клик</li>
+          <li className={classes.li}>Покупайте в рассрочку у партнеров до 12 мес, вне сети партнеров на 3 мес</li>
         </ul>
 
         <Grid className={classes.circleIphoneRight}>

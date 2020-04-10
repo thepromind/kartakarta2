@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: 'auto',
         right: '0%',
         left: '0%',
-        top: '5%',
+        top: '-5%',
       }
     },
     "@keyframes dotMode": {
@@ -78,13 +78,13 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       imgdegCards: {
         position: 'relative',
-        padding: '2rem 0',
+        paddingTop: '2rem',
         height: '100%',
         display: 'grid',
         alignContent: 'center',
         '& > img': {
           position: 'absolute',
-          width: '100%',
+          width: '95%',
           top: 0,
           margin: 'auto',
           left: 0,
@@ -207,11 +207,11 @@ const useStyles = makeStyles((theme: Theme) =>
       ...rootSmXl,
       mainTitle: {
         fontStyle: "normal",
-        fontWeight: "bold",
+        fontWeight: "500",
         fontSize: "40px",
         color: "#141414",
         textAlign: 'center',
-        marginBottom: 40
+        marginBottom: 64
       },
       paper: {
         padding: "27px 32px 27px 32px"
@@ -270,6 +270,10 @@ const useStyles = makeStyles((theme: Theme) =>
         animationIterationCount: 'infinite',
         animationTimingFunction: 'ease-in',
         animationDirection: 'alternate'
+      },
+      gearCard: {
+        width: '100%',
+        height: '252px'
       },
       title: {
         fontStyle: "normal",
@@ -353,7 +357,7 @@ const BestCard = (props: any) => {
                 className={classes.icon}
                 alt="asset_deg_card"
               />
-              <svg className={classes.gearCard} width="558" height="262" viewBox="0 0 558 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className={classes.gearCard} width="558" height="150" viewBox="0 0 558 262" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d)">
                   <rect width="335.393" height="209.858" rx="16" transform="matrix(1 0 0.648591 0.768008 43 46.8279)" fill="#1E1E1E" />
                 </g>
@@ -480,11 +484,11 @@ const BestCard = (props: any) => {
                 <Typography className={classes.title}>Рассрочка и кредитка в одной карте</Typography>
                 <ul className={classes.ul}>
                   <li className={classes.li}>
-                    Вы решаете как оплачивать покупки:<br />
-                    Одним платежом или в рассрочку до 12 месяцев
+                    Вы решаете, как оплачивать:
+                    одним платежом или в рассрочку
                   </li>
                   <li className={classes.li}>Покупайте в рассрочку по всему миру и в интернете</li>
-                  <li className={classes.li}>Получите деньги без процентов до 55 дней с карты</li>
+                  <li className={classes.li}>Тратьте до 3 000 000 ₸ и возвращайте деньги без процентов до 55 дней</li>
                 </ul>
               </Grid>
             </Grid>
@@ -497,7 +501,7 @@ const BestCard = (props: any) => {
                 <Typography className={classes.title}>Управление личными деньгами</Typography>
                 <ul className={classes.ul2}>
                   <li className={classes.li}>
-                    Бесплатное снятие до 300 000 ₸ в месяц <br />в любом банкомате РК
+                    Бесплатное снятие до 300 000 ₸ в месяц в любом банкомате РК
                   </li>
                 </ul>
               </Grid>

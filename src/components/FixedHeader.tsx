@@ -144,14 +144,13 @@ const FixedHeader = (props: any) => {
   const classes = useStyles({});
   const { t } = useTranslation();
 
-  const onClickOrder = () => {
+  const eventGAOrderCard = () => {
     ReactGA.event({
-      category: "BccCard_order_card",
-      action: "order_card"
+      category: "BccCard_1button_to_order_card",
+      action: "1button_to_order_card"
     });
-    props.scrollToOrder();
+    props.scrollToOrder(true);
   };
-
   const handleLangChange = (lang: any) => {
     props.changeLang(lang)
   }
@@ -189,15 +188,13 @@ const FixedHeader = (props: any) => {
 
           </Grid>
           <Grid item xl={3} lg={3} md={6} sm={4} xs={4}>
-            <Link smooth={true} to="order">
-              <Button
-                variant="contained"
-                className={classes.buttonOrderCard}
-                onClick={() => onClickOrder()}
-              >
-                {t('header.button_main')}
-              </Button>
-            </Link>
+            <Button
+              variant="contained"
+              className={classes.buttonOrderCard}
+              onClick={() => eventGAOrderCard()}
+            >
+              {t('header.button_main')}
+            </Button>
           </Grid>
         </Grid>
       </Grid>

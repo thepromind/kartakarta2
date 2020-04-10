@@ -244,7 +244,7 @@ const AdditionalInfo = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Typography className={classes.title}>Условия и обслуживание по карте</Typography>
+        <Typography className={classes.title}>Условия и тарифы</Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
         <Box width={0.7} className={classes.boxTable}>
@@ -272,7 +272,7 @@ const AdditionalInfo = () => {
                 <TableCell className={classes.td}>0%</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className={classes.th}>Кешбэк</TableCell>
+                <TableCell className={classes.th}>Кэшбэк</TableCell>
                 <TableCell className={classes.td}>до 30%</TableCell>
               </TableRow>
               <TableRow>
@@ -286,13 +286,13 @@ const AdditionalInfo = () => {
               </TableRow>
               <TableRow className={classes.tr}>
                 <TableCell className={classes.th}>Снятие наличных</TableCell>
-                <TableCell className={classes.td}>бесплатно - личные средства до 300 000 Т  в мес. в<br /> любом банкомате РК</TableCell>
+                <TableCell className={classes.td}>бесплатно - личные средства до 300 000 Т  в мес. в любом банкомате РК</TableCell>
               </TableRow>
 
             </TableBody>
           </Table>
           <Typography className={classes.filesType}>
-            <a href="Cashback_program_ru.pdf" className={classes.a}>
+            <a href={t('block_8.cashbacks')} className={classes.a}>
               <img src="pdf.svg" alt="pdf" />
               &nbsp; Тарифы
             </a>
@@ -300,7 +300,7 @@ const AdditionalInfo = () => {
 
           <Typography className={classes.bottomTitle}>Документы</Typography>
           <Typography className={classes.filesType}>
-            <a href="Cashback_program_ru.pdf" className={classes.a}>
+            <a href={t('block_8.cashbacks')} className={classes.a}>
               <img src="pdf.svg" alt="pdf" />
               &nbsp; {t('block_8.title_13_tab_4')}
             </a>
@@ -308,7 +308,7 @@ const AdditionalInfo = () => {
         </Box>
 
       </Grid>
-    </Grid>
+    </Grid >
   );
 };
 

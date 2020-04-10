@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {
   Header,
+  Banner,
   BestCard,
   CardOrder,
   CalculatorCashback,
@@ -34,7 +35,7 @@ function App() {
 
   const scrollToOrderRef = (flag: boolean) =>
     Scroll.animateScroll.scrollTo(
-      flag ? orderRef.current.offsetTop - 140 : orderRef.current.offsetTop - 80
+      flag ? orderRef.current.offsetTop - 100 : orderRef.current.offsetTop - 100
     );
 
   const [isSend, setSend] = React.useState<boolean>(false);
@@ -58,6 +59,7 @@ function App() {
       />
       <Header lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
       <FixedHeader lang={lang} changeLang={handleLangChange} scrollToOrder={scrollToOrderRef} />
+      <Banner />
       <BestCard />
       <CalculatorCashback scrollToOrder={scrollToOrderRef} />
       <HowToGetCard />

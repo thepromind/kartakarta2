@@ -114,7 +114,9 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "32px",
         color: '#141414',
         textAlign: 'center',
-        marginBottom: 20
+        margin: 'auto',
+        marginBottom: 20,
+        width: '70%'
       },
       paperCard: {
         background: '#FBFBFB',
@@ -197,8 +199,8 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       titleText: {
-        fontSize: 30,
-        fontWeight: 'bold',
+        fontSize: 32,
+        fontWeight: '500',
         color: "#141414",
         textAlign: 'center'
       },
@@ -276,7 +278,8 @@ const useStyles = makeStyles((theme: Theme) =>
         color: '#141414',
         '& > small': {
           fontSize: 14,
-          marginBottom: 5
+          marginBottom: 5,
+          marginRight: 5
         }
       },
       colorOne: {
@@ -406,8 +409,8 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       titleText: {
-        fontSize: 30,
-        fontWeight: 'bold',
+        fontSize: 32,
+        fontWeight: '500',
         color: "#141414",
         textAlign: 'center'
       },
@@ -485,7 +488,8 @@ const useStyles = makeStyles((theme: Theme) =>
         color: '#141414',
         '& > small': {
           fontSize: 14,
-          marginBottom: 5
+          marginBottom: 5,
+          marginRight: 5
         }
       },
       colorOne: {
@@ -521,7 +525,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "40px",
         color: '#141414',
         textAlign: 'center',
-        marginBottom: 50
+        marginBottom: 64
       },
       paperCard: {
         padding: '4rem 10rem',
@@ -666,7 +670,8 @@ const useStyles = makeStyles((theme: Theme) =>
         color: '#141414',
         '& > small': {
           fontSize: 14,
-          marginBottom: 5
+          marginBottom: 5,
+          marginRight: 5
         }
       },
       textBottomCircle: {
@@ -711,12 +716,12 @@ const data = [{
   price: 200000
 }, {
   id: 1,
-  from: "билеты в Тайланд",
+  from: "билеты в Таиланд",
   fromIcon: "image-cashback-1.png",
   price: 170000
 }, {
   id: 2,
-  from: "отдых в санаторий",
+  from: "отдых в санатории",
   fromIcon: "event-5.png",
   price: 120000
 }, {
@@ -832,10 +837,10 @@ const CaclulatorCashBack = (props: any) => {
             <Grid xl={12} lg={12} md={12} sm={12} xs={12}>
               <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                 <Typography className={classes.titleText}>
-                  Больше кэшбека в вашем кармане
+                  Больше кэшбэка в вашем кармане
                 </Typography>
                 <Typography className={classes.monthSpending}>
-                  * В расчет для примера взят кэшбек 5%. Ваша трата в месяц:
+                  * В расчет для примера взят кэшбэк 5%. Ваша трата в месяц:
                 </Typography>
               </Grid>
               <Grid
@@ -888,7 +893,7 @@ const CaclulatorCashBack = (props: any) => {
                             ₸
               </Typography>
                           <Typography align="left" className={classes.resultTitleTour}>
-                            Накопленный кэшбек хватает на {d.from}
+                            Накопленный кэшбэк хватит на {d.from}
                           </Typography>
                         </Grid>
                       </Grid>

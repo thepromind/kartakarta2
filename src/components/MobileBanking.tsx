@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       img: {
-        width: 'auto',
+        width: '260px',
         height: 'auto',
         position: 'relative',
         bottom: 0
@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       img: {
-        width: 'auto',
+        width: '300px',
         height: 'auto',
         position: 'absolute',
         bottom: 0
@@ -154,7 +154,7 @@ const MobileBanking = () => {
                   <img src="exchange-icon.svg" />
                   <Typography className={classes.description}>
                     Управляйте рассрочкой
-                    <br />и кэшбеком
+                    <br />и кэшбэком
                   </Typography>
                 </Grid>
 

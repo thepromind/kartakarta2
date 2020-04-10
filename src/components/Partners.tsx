@@ -309,7 +309,7 @@ const Partners = (props: any) => {
           <Typography className={classes.mainTitle}>
             Наши партнеры
           </Typography>
-          <span className={classes.subMainTitle}>с бесплатной рассрочкой и классными кешбэками</span>
+          <span className={classes.subMainTitle}>с бесплатной рассрочкой и классными кэшбэками</span>
           <Grid container className={classes.partnerImgBlock}>
             <span className={classes.partnerImg} style={{ backgroundImage: 'url(parnter-1.svg)' }}></span>
             <span className={classes.partnerImg} style={{ backgroundImage: 'url(parnter-2.svg)' }}></span>
@@ -329,9 +329,6 @@ const Partners = (props: any) => {
               партнеров
             </Button>
           </Typography>
-        </Grid>
-        <Grid xl={12} lg={12} md={12} sm={12} xs={12} className={classes.rahmetBg}>
-          <img src="rahmet-bg.svg" />
         </Grid>
         <Grid xl={12} lg={12} md={12} sm={12} xs={12} className={classes.stepsBlock}>
           <Typography className={classes.mainTitle}>
@@ -359,7 +356,7 @@ const Partners = (props: any) => {
             <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
               <Grid className={classes.steps}>
                 <span>3</span>
-                <h4>Подайте заявку</h4>
+                <h4>Получите карту</h4>
                 <p>Сразу получите карту и начните <br />пользоваться</p>
               </Grid>
             </Grid>

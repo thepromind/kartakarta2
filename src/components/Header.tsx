@@ -134,7 +134,22 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "40px",
       },
       cardDescriptionBlock: {
-        marginTop: "80px"
+        marginTop: "80px",
+        display: 'grid',
+        gridTemplateAreas: ' "a" "d" "b" "c" ',
+      },
+      gridAreaA: {
+        gridArea: 'a'
+      },
+      gridAreaB: {
+        gridArea: 'b'
+      },
+      gridAreaC: {
+        gridArea: 'c',
+        marginBottom: 32
+      },
+      gridAreaD: {
+        gridArea: 'd'
       },
       cardTitle: {
         fontStyle: "normal",
@@ -147,6 +162,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontStyle: "normal",
         fontWeight: "normal",
         fontSize: "20px",
+        textAlign: 'center',
         color: "#141414",
         opacity: 0.87
       },
@@ -423,6 +439,7 @@ const useStyles = makeStyles((theme: Theme) =>
           fontStyle: 'normal',
           fontWeight: 'normal',
           fontSize: 20,
+          marginLeft: 10,
           color: '#141414'
         }
       },
@@ -505,7 +522,7 @@ const Header = (props: any) => {
         </Grid>
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Grid container className={classes.cardDescriptionBlock}>
-            <Grid item xl={8} lg={8} md={8} sm={12} xs={12}>
+            <Grid item xl={8} lg={8} md={8} sm={12} xs={12} className={classes.gridAreaA}>
               <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                 <Typography className={classes.cardTitle}>{t('header.title')}</Typography>
               </Grid>
@@ -518,10 +535,10 @@ const Header = (props: any) => {
               </Typography>
               </Grid>
             </Grid>
-            <Grid item xl={4} lg={4} md={4} sm={12} xs={12} container justify="flex-end">
+            <Grid item xl={4} lg={4} md={4} sm={12} xs={12} container justify="flex-end" className={classes.gridAreaB}>
               <img src="asset_card.svg" className={classes.assetCard} />
             </Grid>
-            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12} className={classes.gridAreaC}>
               <Grid container spacing={6} className={classes.grid_header}>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
@@ -541,7 +558,7 @@ const Header = (props: any) => {
                 </Grid>
                 <Grid item>
                   <Typography className={classes.featureTitle}>
-                    до 30% кэшбека
+                    до 30% кэшбэка
                   </Typography>
                   <Typography className={classes.featureDesc}>
                     C управлением категориями
@@ -549,7 +566,7 @@ const Header = (props: any) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12} className={classes.gridAreaD}>
               <Button
                 onClick={() => eventGAOrderCard()}
                 variant="contained"
