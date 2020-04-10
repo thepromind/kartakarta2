@@ -341,6 +341,17 @@ const useStyles = makeStyles((theme: Theme) =>
 const HowToGetCard = (props: any) => {
   const classes = useStyles({});
   const { t } = useTranslation();
+  const [countUp, setCountUp] = React.useState(false)
+
+  React.useEffect(() => {
+    window.document.addEventListener("scroll", d => {
+      const doc = document;
+      const element = doc && doc.getElementById("countUp");
+      const scrollTop = element && element.offsetTop;
+      scrollTop && (window.scrollY + 700) >= scrollTop
+        && setCountUp(true)
+    });
+  });
 
   return (
     <Grid container className={classes.mainRoot}>
@@ -363,10 +374,12 @@ const HowToGetCard = (props: any) => {
         </ul>
       </Grid>
 
-      <Grid container className={classes.root}>
+      <Grid container className={classes.root} id="countUp">
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12} className={classes.numCashGive}>
           <span className={classes.subTextCash}>Зачислено кэшбэка наших клиентов с января 2020 года</span>
-          <Typography className={classes.numTextCash}> <CountUp delay={2} start={20} end={26} duration={10} />  <CountUp delay={2} start={392} end={695} duration={5} separator=" " /> <CountUp delay={2} start={687} end={828} duration={5} /> ₸</Typography>
+          {
+            countUp ? (<Typography className={classes.numTextCash}> <CountUp delay={0} start={20} end={26} duration={10} />  <CountUp delay={0} start={392} end={695} duration={5} separator=" " /> <CountUp delay={0} start={687} end={828} duration={5} /> ₸</Typography>) : ''
+          }
         </Grid>
 
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>

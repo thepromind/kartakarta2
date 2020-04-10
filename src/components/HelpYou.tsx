@@ -42,6 +42,9 @@ const ExpansionPanelSummary = withStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    '& p': {
+      fontWeight: 'bold'
+    },
     '& span': {
       position: 'relative',
       display: 'block',
@@ -140,6 +143,10 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "white",
         borderRadius: 8,
       },
+      graphPanel: {
+        width: '100%',
+        marginTop: 16
+      },
       tabs: {
         width: '100%',
         border: "1px solid #E8E8E8",
@@ -182,7 +189,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
       },
       graphPanel: {
-        width: '100%'
+        width: '100%',
+        marginTop: 16
       },
       imgStick: {
         marginTop: 16,
@@ -573,6 +581,8 @@ const HelpYou = () => {
 
                     Например, в марте Вы купили товар без рассрочки на 20 000 Т, а в рассрочку на 30 000 Т у нашего партнера (сроком на 3 мес). Если до 25 апреля Вы внесете на #картакарта 30 000 Т (долг без рассрочки 20 000 Т + ежемесячный платеж по рассрочке 10 000 Т), то проценты не начислятся.
           </Typography>
+
+                  <img src="credit_card_graph.svg" className={classes.graphPanel} />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -710,6 +720,7 @@ const HelpYou = () => {
                     Сумма минимального платежа выставляется к оплате 1-ого числа каждого месяца. Срок оплаты - до 25-ого числа.<br />
 Например, Вы использовали кредитный лимит в марте. 1 апреля Банк выставляет сумму минимального платежа. Срок оплаты - до 25 апреля
           </Typography>
+                  <img src="graphNew.svg" />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -768,6 +779,8 @@ const HelpYou = () => {
 Например, в марте Вы совершили покупку в рассрочку на 30 000 Т на срок 3 месяца. Сумма делится на 3 части. Каждый месяц (апрель, май, июнь) Вы возвращаете по 10 000 Т и не платите проценты.<br />
 Плановый (ежемесячный) платеж по рассрочке 10 000 Т автоматически включается в сумму минимального платежа, выставляемого Банком для оплаты 1-ого числа каждого месяца
           </Typography>
+
+                  <img src="graphNew.svg" />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               <ExpansionPanel square expanded={expanded === 'panel81'} onChange={handleChangePanel('panel81')}>

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
             mySocial: {
                 display: 'flex',
-                '& > img': {
+                '& > a': {
                     marginRight: 10
                 }
             },
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
             mySocial: {
                 display: 'flex',
-                '& > img': {
+                '& > a': {
                     marginRight: 10
                 }
             },
@@ -127,7 +127,7 @@ const Footer = () => {
             category: "BccCard_call_505",
             action: "call_505"
         });
-        window.open("tel:505");
+        window.open("tel:505", "_self");
     };
 
     const onClickCallMB = () => {
@@ -135,7 +135,7 @@ const Footer = () => {
             category: "BccCard_iron_call_2443030",
             action: "iron_call_2443030"
         });
-        window.open("tel:87272443030");
+        window.open("tel:87272443030", "_self");
     };
     return (
         <Grid container className={classes.mainRoot}>
@@ -150,9 +150,9 @@ const Footer = () => {
                 <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
                     <Typography className={classes.myFontTitle}>В соц. сетях</Typography>
                     <Typography className={classes.mySocial}>
-                        <img src="insta.svg" />
-                        <img src="facebook.svg" />
-                        <img src="vk.svg" />
+                        <a href="https://www.instagram.com/centercreditkz/" target="_blank"><img src="insta.svg" /></a>
+                        <a href="https://vk.com/centercredit" target="_blank"><img src="facebook.svg" /></a>
+                        <a href="https://www.facebook.com/bcc.kz?fref=ts" target="_blank"><img src="vk.svg" /></a>
                     </Typography>
                 </Grid>
 

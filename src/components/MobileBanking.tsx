@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       img: {
         width: '260px',
-        height: 'auto',
+        height: '100%',
         position: 'relative',
         bottom: 0
       }
