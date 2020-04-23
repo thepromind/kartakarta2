@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: 'auto',
         right: '0%',
         left: '0%',
-        top: '-5%',
+        top: '-15%',
       }
     },
     "@keyframes dotMode": {

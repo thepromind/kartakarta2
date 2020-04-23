@@ -893,7 +893,7 @@ const CaclulatorCashBack = (props: any) => {
                             ₸
               </Typography>
                           <Typography align="left" className={classes.resultTitleTour}>
-                            Накопленный кэшбэк хватит на {d.from}
+                            Накопленного кэшбэк хватит на {d.from}
                           </Typography>
                         </Grid>
                       </Grid>

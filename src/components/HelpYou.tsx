@@ -128,6 +128,10 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 32,
         marginTop: 64,
       },
+      graphNew: {
+        width: '100%',
+        marginTop: 16
+      },
       imgStick: {
         marginRight: 16,
         marginTop: 16,
@@ -189,6 +193,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
       },
       graphPanel: {
+        width: '100%',
+        marginTop: 16
+      },
+      graphNew: {
         width: '100%',
         marginTop: 16
       },
@@ -720,7 +728,7 @@ const HelpYou = () => {
                     Сумма минимального платежа выставляется к оплате 1-ого числа каждого месяца. Срок оплаты - до 25-ого числа.<br />
 Например, Вы использовали кредитный лимит в марте. 1 апреля Банк выставляет сумму минимального платежа. Срок оплаты - до 25 апреля
           </Typography>
-                  <img src="graphNew.svg" />
+                  <img src="graphNew.svg" className={classes.graphNew} />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -780,7 +788,7 @@ const HelpYou = () => {
 Плановый (ежемесячный) платеж по рассрочке 10 000 Т автоматически включается в сумму минимального платежа, выставляемого Банком для оплаты 1-ого числа каждого месяца
           </Typography>
 
-                  <img src="graphNew.svg" />
+                  <img src="graphNew.svg" className={classes.graphNew} />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               <ExpansionPanel square expanded={expanded === 'panel81'} onChange={handleChangePanel('panel81')}>
@@ -819,11 +827,6 @@ const HelpYou = () => {
                     Со списком партнеров можно ознакомиться в приложении StarBanking, а также на странице <a href=""> с партнерами</a>
                   </Typography>
 
-                  <img src="nakleika-3.svg" className={classes.imgStick} />
-
-                  <img src="nakleika-6.svg" className={classes.imgStick} />
-
-                  <img src="nakleika-12.svg" className={classes.imgStick} />
 
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -837,6 +840,12 @@ const HelpYou = () => {
                   <Typography>
                     Наших партнеров Вы сможете определить по наклейке с указанием #картакарта и сроком рассрочки
           </Typography>
+
+                  <img src="nakleika-3.svg" className={classes.imgStick} />
+
+                  <img src="nakleika-6.svg" className={classes.imgStick} />
+
+                  <img src="nakleika-12.svg" className={classes.imgStick} />
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -866,7 +875,7 @@ const HelpYou = () => {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
-              <ExpansionPanel square expanded={expanded === 'panel87'} onChange={handleChangePanel('panel86')}>
+              <ExpansionPanel square expanded={expanded === 'panel87'} onChange={handleChangePanel('panel87')}>
                 <ExpansionPanelSummary aria-controls="panel87d-content" id="panel87d-header">
                   <Typography>Какая минимальная сумма покупки в рассрочку?</Typography>
                   <span className={classes.plusMinus}></span>

@@ -531,7 +531,7 @@ const Header = (props: any) => {
                   {t('header.subtitle_desc')}
                 </Typography>
                 <Typography className={classes.bonusLove}>
-                  10% приятный бонус на первую покупку (до 1000 ₸)
+                  10% приятный бонус за первую покупку (до 1000 ₸)
               </Typography>
               </Grid>
             </Grid>
@@ -553,7 +553,7 @@ const Header = (props: any) => {
                     Умная рассрочка - только у нас
                   </Typography>
                   <Typography className={classes.featureDesc}>
-                    Под 0% до 12 месяцев
+                    0% до 12 месяцев
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -561,7 +561,7 @@ const Header = (props: any) => {
                     до 30% кэшбэка
                   </Typography>
                   <Typography className={classes.featureDesc}>
-                    C управлением категориями
+                    С настройкой своих категорий
                   </Typography>
                 </Grid>
               </Grid>
@@ -581,7 +581,7 @@ const Header = (props: any) => {
                 <Grid className={classes.motivateText}>
                   <h6>0</h6>
                   <small>₸</small>
-                  <span>Выпуск и<br />обслуживание карты</span>
+                  <span>Выпуск и<br />обслуживание карты<br />во все года</span>
                 </Grid>
                 <Grid className={classes.motivateText}>
                   <h6>0</h6>
