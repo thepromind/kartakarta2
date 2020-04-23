@@ -428,7 +428,7 @@ const HelpYou = () => {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Со списком партнеров можно ознакомиться на странице с партнерами (ссылку зашить). Совсем скоро партнеры появятся и в приложении StarBanking!
+                    Со списком партнеров можно ознакомиться на странице с <a href="https://www.bcc.kz/partners/">партнерами</a>. Совсем скоро партнеры появятся и в приложении StarBanking!
           </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -824,7 +824,7 @@ const HelpYou = () => {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
-                    Со списком партнеров можно ознакомиться в приложении StarBanking, а также на странице <a href=""> с партнерами</a>
+                    Со списком партнеров можно ознакомиться в приложении StarBanking, а также на странице <a href="https://www.bcc.kz/partners/"> с партнерами</a>
                   </Typography>
 
 

@@ -470,7 +470,7 @@ const AdditionalInfo = () => {
 
 
           <Typography className={classes.filesType}>
-            <a href={t('block_8.cashbacks')} className={classes.a}>
+            <a href={t('block_8.tarifs')} className={classes.a}>
               <img src="pdf.svg" alt="pdf" />
               &nbsp; Тарифы
             </a>
