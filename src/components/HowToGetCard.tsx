@@ -455,7 +455,7 @@ const HowToGetCard = (props: any) => {
         </ul>
 
         <Grid className={classes.circleIphoneRight}>
-          <img src="circlePhone-2.png" className={classes.animPhone} />
+          <img src="gifka.gif" className={classes.animPhone} />
         </Grid>
 
       </Grid>

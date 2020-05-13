@@ -520,7 +520,7 @@ const Header = (props: any) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+        <Grid item xl={12} lg={12} md={12} sm={12} xs={12} id="secondHeader">
           <Grid container className={classes.cardDescriptionBlock}>
             <Grid item xl={8} lg={8} md={8} sm={12} xs={12} className={classes.gridAreaA}>
               <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>

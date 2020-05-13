@@ -273,7 +273,7 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'table',
         '& > span': {
           '& > span': {
-            borderBottom: '1px solid #F3F3F3'
+            borderBottom: '1px solid #F3F3F3',
           }
         },
         '& span:first-child': {
@@ -304,14 +304,18 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         '& span:nth-child(1)': {
           textAlign: 'left',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          justifyContent: 'flex-start',
         },
       },
       tdTable: {
         width: '24%',
         textAlign: 'center',
-        padding: '32px 0',
+        padding: '18px 8px',
         color: '#444444',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         '& b': {
 
         }
@@ -419,17 +423,18 @@ const AdditionalInfo = () => {
           </span>
           <span className={classes.trTable}>
             <span className={classes.tdTable}>Процентная ставка <br />(без рассрочки)</span>
-            <span className={classes.tdTable}>0% в льготный период
-            <br />22,99% - для участников зарплатного проекта (ГЭСВ до 26%)
-            <br />24,99% - для других клиентов (ГЭСВ до 29%)</span>
+            <span className={classes.tdTable}><p>0% в льготный период
+              <br />22,99% - для участников зарплатного проекта (ГЭСВ до 26%)
+            <br />24,99% - для других клиентов (ГЭСВ до 29%) </p></span>
+
             <span className={classes.tdTable}>не предусмотрено</span>
-            <span className={classes.tdTable}>26% (ГЭСВ от 27.8%)</span>
+            <span className={classes.tdTable}>0% в льготный период<br />26% (ГЭСВ от 27.8%)</span>
           </span>
           <span className={classes.trTable}>
             <span className={classes.tdTable}>Процентная ставка<br />(в рассрочку)</span>
-            <span className={classes.tdTable}><b>0%</b></span>
-            <span className={classes.tdTable}><b>0%</b></span>
-            <span className={classes.tdTable}><b>0%</b></span>
+            <span className={classes.tdTable}>0%</span>
+            <span className={classes.tdTable}>0%</span>
+            <span className={classes.tdTable}>0%</span>
           </span>
           <span className={classes.trTable}>
             <span className={classes.tdTable}>Кэшбэк</span>

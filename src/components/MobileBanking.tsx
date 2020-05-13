@@ -191,7 +191,7 @@ const MobileBanking = () => {
           <Grid container justify="center">
             <img
               className={classes.img}
-              src="stars_mobile_banking.png"
+              src="starsMobile.svg"
               alt="star_mobile_banking"
             />
           </Grid>

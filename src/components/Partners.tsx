@@ -341,7 +341,7 @@ const Partners = (props: any) => {
               <Grid className={classes.steps}>
                 <span>1</span>
                 <h4>Подайте заявку</h4>
-                <p>Обратитесь за #картакарта<br /> в ближайшее <a href="">отделение</a> Банка</p>
+                <p>Обратитесь за #картакарта<br /> в ближайшее <a href="https://www.bcc.kz/branches-and-atms/?utm_source=instagram&utm_medium=taplink" target="_blank">отделение</a> Банка</p>
               </Grid>
             </Grid>
 
